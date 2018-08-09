@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceName": {
-            "value": "htdevtestlab01-kube01"
+            "value": "testlab01-kube01"
         },
         "location": {
             "value": "eastus2"
         },
         "dnsPrefix": {
-            "value": "htdev-kube01"
+            "value": "-kube01"
         },
         "agentCount": {
             "value": 3
@@ -27,10 +27,10 @@
             "value": "1.10.6"
         },
         "workspaceName": {
-            "value": "defaultworkspace-563575e7-d5b3-4528-8f64-18a2e7601a11-eus"
+            "value": "defaultworkspace-1234567-9876-4563-2984-iouswir8923764-eus"
         },
         "omsWorkspaceId": {
-            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourcegroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-563575e7-d5b3-4528-8f64-18a2e7601a11-eus"
+            "value": "/subscriptions/1234567-9876-4563-2984-iouswir8923764/resourcegroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-1234567-9876-4563-2984-iouswir8923764-eus"
         },
         "workspaceRegion": {
             "value": "eastus"
@@ -45,19 +45,19 @@
             "value": false
         },
         "vnetSubnetID": {
-            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/htdevtest-net01-sub01"
+            "value": "/subscriptions/1234567-9876-4563-2984-iouswir8923764/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/test-net01-sub01"
         },
         "serviceCidr": {
-            "value": "10.26.11.0/24"
+            "value": "10.0.0.0/16"
         },
         "dnsServiceIP": {
-            "value": "10.26.11.10"
+            "value": "10.0.0.10"
         },
         "dockerBridgeCidr": {
             "value": "172.17.0.1/16"
         },
         "scope": {
-            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/htdevtest-net01-sub01"
+            "value": "/subscriptions/1234567-9876-4563-2984-iouswir8923764/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/test-net01-sub01"
         },
         "principalId": {
             "value": "1e5de135-cf25-4799-bafc-1fadb78ab9c8"
