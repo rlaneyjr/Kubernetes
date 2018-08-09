@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceName": {
-            "value": "rl-kube01"
+            "value": "htdevtestlab01-kube01"
         },
         "location": {
-            "value": "eastus"
+            "value": "eastus2"
         },
         "dnsPrefix": {
-            "value": "rlkube01"
+            "value": "htdev-kube01"
         },
         "agentCount": {
             "value": 3
@@ -18,16 +18,22 @@
             "value": "Standard_B2ms"
         },
         "servicePrincipalClientId": {
-            "value": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+            "value": null
         },
         "servicePrincipalClientSecret": {
-            "value": "Mczj4s4D26cypMVDPECHQhrAS8iWim9VeWtcw0i2ACk="
+            "value": null
         },
         "kubernetesVersion": {
             "value": "1.10.6"
         },
-        "enableOmsAgent": {
-            "value": false
+        "workspaceName": {
+            "value": "defaultworkspace-563575e7-d5b3-4528-8f64-18a2e7601a11-eus"
+        },
+        "omsWorkspaceId": {
+            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourcegroups/defaultresourcegroup-eus/providers/microsoft.operationalinsights/workspaces/defaultworkspace-563575e7-d5b3-4528-8f64-18a2e7601a11-eus"
+        },
+        "workspaceRegion": {
+            "value": "eastus"
         },
         "enableHttpApplicationRouting": {
             "value": true
@@ -36,25 +42,25 @@
             "value": "azure"
         },
         "enableRBAC": {
-            "value": true
+            "value": false
         },
         "vnetSubnetID": {
-            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/htdevtest-net01-sub01"
         },
         "serviceCidr": {
-            "value": "10.124.41.0/24"
+            "value": "10.26.11.0/24"
         },
         "dnsServiceIP": {
-            "value": "10.124.41.10"
+            "value": "10.26.11.10"
         },
         "dockerBridgeCidr": {
             "value": "172.17.0.1/16"
         },
         "scope": {
-            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/HT-DevTest-Lab01/providers/Microsoft.Network/virtualNetworks/HT-DevTest-Net01/subnets/htdevtest-net01-sub01"
         },
         "principalId": {
-            "value": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+            "value": "1e5de135-cf25-4799-bafc-1fadb78ab9c8"
         }
     }
 }

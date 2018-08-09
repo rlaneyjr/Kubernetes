@@ -219,13 +219,16 @@
                     "dnsServiceIP": "[parameters('dnsServiceIP')]",
                     "dockerBridgeCidr": "[parameters('dockerBridgeCidr')]"
                 }
+            },
+            "tags": {
+                "group": "ht-devtest-lab01"
             }
         },
         {
             "type": "Microsoft.Resources/deployments",
             "name": "RoleAssignmentDeployment",
             "apiVersion": "2017-05-10",
-            "resourceGroup": "rl-eastus-rg1",
+            "resourceGroup": "HT-DevTest-Lab01",
             "subscriptionId": "563575e7-d5b3-4528-8f64-18a2e7601a11",
             "properties": {
                 "mode": "Incremental",
@@ -238,7 +241,7 @@
                         {
                             "type": "Microsoft.Network/virtualNetworks/subnets/providers/roleAssignments",
                             "apiVersion": "2017-05-01",
-                            "name": "rl-eastus-vnet1/rl-eastus-subnet1/Microsoft.Authorization/18f23f76-884f-4633-aef4-ea64cc8f3bfe",
+                            "name": "HT-DevTest-Net01/htdevtest-net01-sub01/Microsoft.Authorization/acf68545-1744-4185-9d02-9792d68c0f04",
                             "properties": {
                                 "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
                                 "principalId": "[parameters('principalId')]",
