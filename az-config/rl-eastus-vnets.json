@@ -1,0 +1,74 @@
+{
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.125.40.0/24"
+    ]
+  },
+  "ddosProtectionPlan": null,
+  "dhcpOptions": null,
+  "enableDdosProtection": false,
+  "enableVmProtection": false,
+  "etag": "W/\"89f3cf9a-a782-410f-98d8-2c4f08aba6d6\"",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1",
+  "location": "eastus",
+  "name": "rl-eastus-vnet1",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-eastus-rg1",
+  "resourceGuid": "ec3ca040-cb2b-4357-a850-1e3de206f20d",
+  "subnets": [
+    {
+      "addressPrefix": "10.125.40.0/24",
+      "etag": "W/\"89f3cf9a-a782-410f-98d8-2c4f08aba6d6\"",
+      "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1",
+      "ipConfigurations": null,
+      "name": "rl-eastus-subnet1",
+      "networkSecurityGroup": null,
+      "provisioningState": "Succeeded",
+      "resourceGroup": "rl-eastus-rg1",
+      "resourceNavigationLinks": null,
+      "routeTable": null,
+      "serviceEndpoints": [],
+      "type": "Microsoft.Network/virtualNetworks/subnets"
+    }
+  ],
+  "tags": null,
+  "type": "Microsoft.Network/virtualNetworks",
+  "virtualNetworkPeerings": []
+}
+{
+  "addressSpace": {
+    "addressPrefixes": [
+      "10.125.41.0/24"
+    ]
+  },
+  "ddosProtectionPlan": null,
+  "dhcpOptions": null,
+  "enableDdosProtection": false,
+  "enableVmProtection": false,
+  "etag": "W/\"d3f68d76-439f-4cbe-ae66-e924eb9db8e8\"",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet2",
+  "location": "eastus",
+  "name": "rl-eastus-vnet2",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-eastus-rg1",
+  "resourceGuid": "3b6da2cc-3552-4c56-a797-cf155db3e965",
+  "subnets": [
+    {
+      "addressPrefix": "10.125.41.0/24",
+      "etag": "W/\"d3f68d76-439f-4cbe-ae66-e924eb9db8e8\"",
+      "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet2/subnets/rl-eastus-subnet2",
+      "ipConfigurations": null,
+      "name": "rl-eastus-subnet2",
+      "networkSecurityGroup": null,
+      "provisioningState": "Succeeded",
+      "resourceGroup": "rl-eastus-rg1",
+      "resourceNavigationLinks": null,
+      "routeTable": null,
+      "serviceEndpoints": null,
+      "type": "Microsoft.Network/virtualNetworks/subnets"
+    }
+  ],
+  "tags": null,
+  "type": "Microsoft.Network/virtualNetworks",
+  "virtualNetworkPeerings": []
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "adminUserEnabled": true,
+    "creationDate": "2018-08-03T18:16:14.662264+00:00",
+    "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-dev-rg01/providers/Microsoft.ContainerRegistry/registries/rlazreg",
+    "location": "eastus2",
+    "loginServer": "rlazreg.azurecr.io",
+    "name": "rlazreg",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rl-dev-rg01",
+    "sku": {
+      "name": "Standard",
+      "tier": "Standard"
+    },
+    "status": null,
+    "storageAccount": null,
+    "tags": {},
+    "type": "Microsoft.ContainerRegistry/registries"
+  }
+]

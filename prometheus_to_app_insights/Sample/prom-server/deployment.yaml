@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-server-deployment
+  labels:
+    app: pserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pserver
+  template:
+    metadata:
+      labels:
+        app: pserver
+    spec:
+      containers:
+      - name: pserver
+        image: prom/prometheus:latest
+        ports:
+        - containerPort: 9090
+

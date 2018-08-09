@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export CONFIGVALUE=secret
+export PORT=3030
+
+npm start

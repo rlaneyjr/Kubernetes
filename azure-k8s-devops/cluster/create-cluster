@@ -1,0 +1,20 @@
+#!/bin/bash
+
+rm -rf _output
+acs-engine generate app.json
+
+az account set --subscription "1d3bc944-DEAD-BEEF-a1ac-cafea961eba5"
+az group create --name "app-blue-rg" --location "eastus2"
+az network vnet create -n "app-blue-vnet" -g "app-blue-rg" --address-prefixes "10.4.0.0/16" -l "eastus2" --subnet-name "app-blue-subnet" --subnet-prefix "10.4.0.0/16"
+
+az group deployment create --name "app-blue-deployment" --resource-group "app-blue-rg" --template-file "./_output/blue-mydomain-io/azuredeploy.json" --parameters "./_output/blue-mydomain-io/azuredeploy.parameters.json" --parameters "{ \"vnetCidr\": { \"value\": \"10.4.0.0/16\"} }"
+
+echo "you need to copy kube config, and also adjust kubernetes settings -- see this shell script"
+
+echo "scp ops@MASTERIP:/home/ops/.kube/config ~/.kube/config-app-blue"
+
+echo "then run -->"
+
+echo "helm install stable/nginx-ingress --name nginx-ingress --namespace nginx-ingress --set controller.replicaCount=3"
+
+echo 'kubectl create secret docker-registry acr-tpark --docker-server=myrepo.azurecr.io/myusername--docker-username="37d4b6e3-DEAD-BEEF-a575-ea057a781279" --docker-password="1481ea02-2c3e-DEAD-BEEF-960423543685" --docker-email="myemail@mydomain.io"'

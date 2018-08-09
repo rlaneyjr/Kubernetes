@@ -1,0 +1,99 @@
+rlkube01 ➜ az keyvault create -g rl-eastus-rg1 -n rlvault01                                                                                                                                                                         *🐍@3.6.5
+{
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.KeyVault/vaults/rlvault01",
+  "location": "eastus",
+  "name": "rlvault01",
+  "properties": {
+    "accessPolicies": [
+      {
+        "applicationId": null,
+        "objectId": "019a4d7c-5354-4e67-8d83-4a844416a827",
+        "permissions": {
+          "certificates": [
+            "get",
+            "list",
+            "delete",
+            "create",
+            "import",
+            "update",
+            "managecontacts",
+            "getissuers",
+            "listissuers",
+            "setissuers",
+            "deleteissuers",
+            "manageissuers",
+            "recover"
+          ],
+          "keys": [
+            "get",
+            "create",
+            "delete",
+            "list",
+            "update",
+            "import",
+            "backup",
+            "restore",
+            "recover"
+          ],
+          "secrets": [
+            "get",
+            "list",
+            "set",
+            "delete",
+            "backup",
+            "restore",
+            "recover"
+          ],
+          "storage": [
+            "get",
+            "list",
+            "delete",
+            "set",
+            "update",
+            "regeneratekey",
+            "setsas",
+            "listsas",
+            "getsas",
+            "deletesas"
+          ]
+        },
+        "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc"
+      }
+    ],
+    "createMode": null,
+    "enableSoftDelete": null,
+    "enabledForDeployment": false,
+    "enabledForDiskEncryption": null,
+    "enabledForTemplateDeployment": null,
+    "provisioningState": "RegisteringDns",
+    "sku": {
+      "name": "standard"
+    },
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "vaultUri": "https://rlvault01.vault.azure.net"
+  },
+  "resourceGroup": "rl-eastus-rg1",
+  "tags": {},
+  "type": "Microsoft.KeyVault/vaults"
+}
+
+rlkube01 ➜ az keyvault secret set --vault-name rlvault01 -n rleastusacr-sp1-pwd --value 87b9c4d9-0b78-442f-907c-96d6aca06d60                                                                                                         🐍@3.6.5
+{
+  "attributes": {
+    "created": "2018-08-09T03:07:18+00:00",
+    "enabled": true,
+    "expires": null,
+    "notBefore": null,
+    "recoveryLevel": "Purgeable",
+    "updated": "2018-08-09T03:07:18+00:00"
+  },
+  "contentType": null,
+  "id": "https://rlvault01.vault.azure.net/secrets/rleastusacr-sp1-pwd/61951bd138024b6d98b3a94123125279",
+  "kid": null,
+  "managed": null,
+  "tags": {
+    "file-encoding": "utf-8"
+  },
+  "value": "87b9c4d9-0b78-442f-907c-96d6aca06d60"
+}
+

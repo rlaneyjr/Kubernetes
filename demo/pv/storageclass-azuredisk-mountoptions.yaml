@@ -1,0 +1,13 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: hdd
+provisioner: kubernetes.io/azure-disk
+mountOptions:
+  - barrier=1
+  - acl
+parameters:
+  skuname: Standard_LRS
+  kind: Shared
+  fstype: ext3
+  cachingmode: None

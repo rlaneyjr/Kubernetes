@@ -1,0 +1,3 @@
+kubectl create secret docker-registry acr-auth --docker-server rlazreg.azurecr.io --docker-username rlazreg --docker-password k7C6og4Sphk0bONEEdbS=CF2Jv66IMIP --docker-email rlaney@hearstsc.com
+secret/acr-auth created
+

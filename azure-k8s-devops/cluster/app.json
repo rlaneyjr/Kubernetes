@@ -1,0 +1,42 @@
+{
+  "apiVersion": "vlabs",
+  "properties": {
+    "orchestratorProfile": {
+      "orchestratorType": "Kubernetes",
+      "orchestratorRelease": "1.10.6",
+      "kubernetesConfig": {
+        "networkPolicy": "azure"
+      }
+    },
+    "masterProfile": {
+      "count": 1,
+      "dnsPrefix": "rl-kube01",
+      "vmSize": "Standard_B2ms",
+      "vnetSubnetId": "/subscriptions/1d3bc944-DEAD-BEEF-CAFE-cafea961eba5/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1",
+      "firstConsecutiveStaticIP": "10.4.255.239"
+    },
+    "agentPoolProfiles": [
+      {
+        "name": "agents",
+        "count": 4,
+        "vmSize": "Standard_B2ms",
+        "vnetSubnetId": "/subscriptions/1d3bc944-DEAD-BEEF-CAFE-cafea961eba5/resourceGroups/app-blue-rg/providers/Microsoft.Network/virtualNetworks/app-blue-vnet/subnets/app-blue-subnet",
+        "availabilityProfile": "AvailabilitySet"
+      }
+    ],
+    "linuxProfile": {
+      "adminUsername": "ops",
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "ssh-rsa /hE3z5OHTFk/Lq .... tWTUfwxktmWfDGmlBzN9ZZs2Znv4Zm9mJqTfUIufQrwwgFb9FhqxLiXwE49yokAT2j9XfvDnnOMGUqVuY15m2RFIouo/HU9NsgdZDxmB/lrJCf8lH30uIUbRjxnXQ2sKA4Ba/NdqP9Rdtj/Mov4kUNnScUUf8iYMSpfCL0BDY/N9oCN86fBhiREZqVqFn7iwLbQTwRZ7Fmk0/UNGpWeVbqYSm17rLiqmIs02PMepGmb6Ok5o+habgI4nXqw3+5nB8yaTAwIQcn43S4+dLvsmbONNk/gxk7UvI8J3ZALStEVRimuy72aHuseBKLnWWsDo8M1p2eXvABE84IgVNrYklgodNP7GExxNLSLqcsZa9ZALc+P3FRjgYbLC/qMWtkzPH5TEHPU4P5KLbHr4ZN3kV2MiARTtjWOlYMnMnrGu6NYxCmjHsbZxfhhZ2rU3uIEvjUBo9rdtQ== myemail@mydomain.com"
+          }
+        ]
+      }
+    },
+    "servicePrincipalProfile": {
+      "clientId": "6dbc01e2-DEAD-BEEF-CAFE-6ccc4e1bba56",
+      "secret": "26a788a5-DEAD-BEEF-CAFE-9588878f8f59"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "adminUserEnabled": false,
+  "creationDate": "2018-08-05T13:52:11.349000+00:00",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.ContainerRegistry/registries/rleastusacr",
+  "location": "eastus",
+  "loginServer": "rleastusacr.azurecr.io",
+  "name": "rleastusacr",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-eastus-rg1",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "storageAccount": null,
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries"
+}
+
+{
+  "appId": "18f23f76-884f-4633-aef4-ea64cc8f3bfe",
+  "displayName": "rleastusacr-sp1",
+  "name": "http://rleastusacr-sp1",
+  "password": "87b9c4d9-0b78-442f-907c-96d6aca06d60",
+  "tenant": "a84894e7-87c5-40e3-9783-320d0334b3cc"
+}
+
+{
+  "accountEnabled": true,
+  "addIns": [],
+  "alternativeNames": [],
+  "appDisplayName": "rleastusacr-sp1",
+  "appId": "18f23f76-884f-4633-aef4-ea64cc8f3bfe",
+  "appOwnerTenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+  "appRoleAssignmentRequired": false,
+  "appRoles": [],
+  "deletionTimestamp": null,
+  "displayName": "rleastusacr-sp1",
+  "errorUrl": null,
+  "homepage": "http://rleastusacr-sp1",
+  "keyCredentials": [],
+  "logoutUrl": null,
+  "oauth2Permissions": [
+    {
+      "adminConsentDescription": "Allow the application to access rleastusacr-sp1 on behalf of the signed-in user.",
+      "adminConsentDisplayName": "Access rleastusacr-sp1",
+      "id": "06ccd412-fda8-47e6-a1c5-80330b0163d3",
+      "isEnabled": true,
+      "type": "User",
+      "userConsentDescription": "Allow the application to access rleastusacr-sp1 on your behalf.",
+      "userConsentDisplayName": "Access rleastusacr-sp1",
+      "value": "user_impersonation"
+    }
+  ],
+  "objectId": "f40d6ad4-7b32-4270-9ce3-b7a721157310",
+  "objectType": "ServicePrincipal",
+  "odata.metadata": "https://graph.windows.net/a84894e7-87c5-40e3-9783-320d0334b3cc/$metadata#directoryObjects/Microsoft.DirectoryServices.ServicePrincipal/@Element",
+  "odata.type": "Microsoft.DirectoryServices.ServicePrincipal",
+  "passwordCredentials": [],
+  "preferredTokenSigningKeyThumbprint": null,
+  "publisherName": "Hearst",
+  "replyUrls": [],
+  "samlMetadataUrl": null,
+  "servicePrincipalNames": [
+    "http://rleastusacr-sp1",
+    "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+  ],
+  "servicePrincipalType": "Application",
+  "signInAudience": "AzureADMyOrg",
+  "tags": [],
+  "tokenEncryptionKeyId": null
+}
+
+Kubernetes ➜ az acr update -n rleastusacr --admin-enabled true                                                                                                                                                                      *🐍@3.6.5
+{
+  "adminUserEnabled": true,
+  "creationDate": "2018-08-05T13:52:11.349000+00:00",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.ContainerRegistry/registries/rleastusacr",
+  "location": "eastus",
+  "loginServer": "rleastusacr.azurecr.io",
+  "name": "rleastusacr",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-eastus-rg1",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "storageAccount": null,
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries"
+}
+Kubernetes ➜ az acr credential show -n rleastusacr                                                                                                                                                                                  *🐍@3.6.5
+{
+  "passwords": [
+    {
+      "name": "password",
+      "value": "FXfNOZfyAe202VZ64SMjKwPvmr7/iQBG"
+    },
+    {
+      "name": "password2",
+      "value": "ru0f5QOC/55hU0lO0rU23CiNd7YTaVTt"
+    }
+  ],
+  "username": "rleastusacr"
+}
+

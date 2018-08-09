@@ -1,0 +1,49 @@
+[
+  {
+    "aadProfile": null,
+    "addonProfiles": {
+      "httpApplicationRouting": {
+        "config": {
+          "HTTPApplicationRoutingZoneName": "5787a049d6324652b9e5.eastus2.aksapp.io"
+        },
+        "enabled": true
+      }
+    },
+    "agentPoolProfiles": [
+      {
+        "count": 3,
+        "maxPods": 110,
+        "name": "agentpool",
+        "osType": "Linux",
+        "storageProfile": "ManagedDisks",
+        "vmSize": "Standard_D2s_v3"
+      }
+    ],
+    "dnsPrefix": "rlk8s",
+    "enableRbac": false,
+    "fqdn": "rlk8s-88e1abde.hcp.eastus2.azmk8s.io",
+    "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourcegroups/rl-demo-lab1/providers/Microsoft.ContainerService/managedClusters/rl-k8s01",
+    "kubernetesVersion": "1.10.6",
+    "linuxProfile": null,
+    "location": "eastus2",
+    "name": "rl-k8s01",
+    "networkProfile": {
+      "dnsServiceIp": "10.0.0.10",
+      "dockerBridgeCidr": "172.17.0.1/16",
+      "networkPlugin": "kubenet",
+      "networkPolicy": null,
+      "podCidr": "10.244.0.0/16",
+      "serviceCidr": "10.0.0.0/16"
+    },
+    "nodeResourceGroup": "MC_rl-demo-lab1_rl-k8s01_eastus2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rl-demo-lab1",
+    "servicePrincipalProfile": {
+      "clientId": "0e4a6931-8dfa-47f7-8c05-4c3bcbbce658"
+    },
+    "tags": {
+      "group": "rl-demo-k8s"
+    },
+    "type": "Microsoft.ContainerService/ManagedClusters"
+  }
+]

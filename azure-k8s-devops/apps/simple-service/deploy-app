@@ -1,0 +1,3 @@
+#/bin/bash
+
+CONTAINER_REPO=myrepo.azurecr.io/myuser GIT_REPO=https://github.com/timfpark/simple-service SERVICE_NAME=simple-service APP_TYPE=web-service ../common/deploy-app

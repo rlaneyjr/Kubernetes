@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "node"
+env:
+  - APPINSIGHTS_INSTRUMENTATIONKEY=1234
+after_success:
+- npm install
+- npm run coveralls

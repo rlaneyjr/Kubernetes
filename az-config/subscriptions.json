@@ -1,0 +1,986 @@
+[
+  {
+    "cloudName": "AzureCloud",
+    "id": "90e8a44c-a111-4ed3-9693-ba0d79774869",
+    "isDefault": true,
+    "name": "Enterprise",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "618cd32c-62c7-42b7-9f1b-3a9832c96859",
+    "isDefault": false,
+    "name": "KUBRA_DEVTEST",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7bdf368f-9297-4182-b26a-51b5742ae733",
+    "isDefault": false,
+    "name": "Enterprise",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "80513663-dcd0-4237-a1ea-42cee790f7dc",
+    "isDefault": false,
+    "name": "SHARED_REGION_WEST_EUROPE",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7d1b4869-e687-42ec-9fc1-f05ea8efb7a9",
+    "isDefault": false,
+    "name": "Hearst Health International",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "3cc1e62d-1d70-45a0-bab2-b2fcb2a8ab4a",
+    "isDefault": false,
+    "name": "HHO-HOMEOFFICE-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "fe803e95-cad4-457b-97bd-8735183573cc",
+    "isDefault": false,
+    "name": "ICROSSING_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "9c6c679a-4dc8-4886-9f1f-37e28be515f6",
+    "isDefault": false,
+    "name": "HCHB_NONPROD_EASTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7955d782-ef0c-4438-b682-c3756b39afcd",
+    "isDefault": false,
+    "name": "HNP-HC-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "bf205391-b2f8-4991-8193-4d18d9f21b8a",
+    "isDefault": false,
+    "name": "SHARED_REGION_EAST_US",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "c2285550-caff-461a-969c-f4aeeafab9e2",
+    "isDefault": false,
+    "name": "HMD-HMI-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "6a1465a2-c1b5-4ea8-8ec5-02f8e3697a25",
+    "isDefault": false,
+    "name": "Hearst Health International - ITS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "057047bd-65c0-4aeb-9ff2-c9c799c9a389",
+    "isDefault": false,
+    "name": "IFACTOR_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "04a18b12-a6f3-40e4-b6ad-9ef5e96c22fe",
+    "isDefault": false,
+    "name": "HBM_FDBMEDUCATION_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "c5b51717-c90f-4a47-9bf7-120c4fbec09f",
+    "isDefault": false,
+    "name": "HT-HTS-SANDBOX-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "9e68c99c-f37f-40c0-ae05-4954c5a5782b",
+    "isDefault": false,
+    "name": "HBM_FDB_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "fbcbff4c-4854-4e2e-9c79-82afa48fed17",
+    "isDefault": false,
+    "name": "HT_OPS_SHARED",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "75a3dd41-d85a-4130-a3bc-ef4d1baeae68",
+    "isDefault": false,
+    "name": "MCG_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "94e700e6-2b6a-4a2c-8838-f97d7ea907c8",
+    "isDefault": false,
+    "name": "HT_OPS_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7a2d2958-03b6-4e7e-8776-539c225aa439",
+    "isDefault": false,
+    "name": "HT-VOICECMS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7d6cb9e9-8a00-4b0c-8bc0-30ebe43d96e5",
+    "isDefault": false,
+    "name": "MCG_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "1d9561d0-9d1e-4132-adcc-d3814df29f11",
+    "isDefault": false,
+    "name": "HCHB_PROD_WESTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "98e9a6c7-c9c0-4419-bd65-2b18c741a0f4",
+    "isDefault": false,
+    "name": "MCG_DEVTEST",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "d376632f-113d-4b40-9b5a-195380b73861",
+    "isDefault": false,
+    "name": "HEARST-WESTERN-PROPERTIES-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "a832a5fe-554c-49a1-b053-ab8e478b0eb2",
+    "isDefault": false,
+    "name": "KUBRA_PROD_WESTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "ee43fca2-7968-4245-b3cd-66f39e24e396",
+    "isDefault": false,
+    "name": "HCHB_PROD_EASTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "e8a08086-143d-4fbd-8dc9-00cd9183d871",
+    "isDefault": false,
+    "name": "SHARED_REGION_SOUTH_UK",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "6aecd657-b37f-4339-9d31-319d4b156e1c",
+    "isDefault": false,
+    "name": "HT_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "8b63d73e-fed6-4d72-a975-76217ff6e03a",
+    "isDefault": false,
+    "name": "SHARED_REGION_EAST_US2",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "4bbba4c2-775b-4a4a-88a8-3f30b2ee1419",
+    "isDefault": false,
+    "name": "HBM_BLACKBOOK_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "68149bf4-2ef7-4cf6-a19b-62df93458694",
+    "isDefault": false,
+    "name": "ICROSSING_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "de643a5f-1a5f-45a0-a6a3-12e0117ed096",
+    "isDefault": false,
+    "name": "HBM Microsoft Azure Enterprise",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "780e724f-8865-4135-9da3-6f0d22712db4",
+    "isDefault": false,
+    "name": "KUBRA_PROD_EASTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "8060527b-4add-4262-82de-6063c6ddaf63",
+    "isDefault": false,
+    "name": "MEDHOK_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "cb72662f-35f3-4b23-ab9d-7502a4f16495",
+    "isDefault": false,
+    "name": "SHARED_REGION_NORTH_EUROPE",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "77f2a46f-3e96-4383-9aac-a20138b5ba70",
+    "isDefault": false,
+    "name": "SHARED_REGION_WEST_UK",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "9fa99041-043a-406d-8362-25a8b4c17812",
+    "isDefault": false,
+    "name": "HNP-LOCALEDGE-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7363fb3c-46e6-44f2-8b9c-de24859bee96",
+    "isDefault": false,
+    "name": "HTV-HTV-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "6133c7a0-a417-43b9-acb9-1bdd65114bbe",
+    "isDefault": false,
+    "name": "HT-HTS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "c87aa330-d4f1-4630-92bc-e647dfb7d9f9",
+    "isDefault": false,
+    "name": "HMD-PRIMEFOCUS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "44e2e7a4-08ec-44e1-9d1d-248846fb9d5c",
+    "isDefault": false,
+    "name": "HT-CHEF-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "31a61404-816c-4994-8fa7-44bca950c3bd",
+    "isDefault": false,
+    "name": "HBM_FITCHGROUP_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "969d88e4-3ce7-402a-a9af-248996ef9834",
+    "isDefault": false,
+    "name": "HT-HTS-MYHEARST-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "95c77314-199a-497d-bae1-e4a34505e544",
+    "isDefault": false,
+    "name": "Microsoft Azure Enterprise",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "563575e7-d5b3-4528-8f64-18a2e7601a11",
+    "isDefault": false,
+    "name": "HT_OPS_NONPROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "9e79b878-0ab0-43b5-be75-97b518f1383c",
+    "isDefault": false,
+    "name": "Pay-As-You-Go(Converted to EA)",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "e7b7fedf-8a8f-4b0c-913b-a08ccd060d9a",
+    "isDefault": false,
+    "name": "HT-HTS-DESKTOPENG-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "61b45cc4-a647-4826-a773-0e11811b514a",
+    "isDefault": false,
+    "name": "HBM-BLACKBOOK-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "bdb129cc-a3c3-4122-8677-8bc2ae6d3563",
+    "isDefault": false,
+    "name": "HMD-MEDIAOS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "3bf42932-fd9b-4f4a-b2a5-a2b9d328b5db",
+    "isDefault": false,
+    "name": "SHARED_REGION_CENTRAL_US",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "02813fac-4433-4099-b92f-79c2220ba8c7",
+    "isDefault": false,
+    "name": "SHARED_EXPRESSROUTE",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "85128e1a-0ddc-4a1b-8b23-93778299842c",
+    "isDefault": false,
+    "name": "HT-DATASCIENCE-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "03d6a31b-4f3f-40d7-b4f0-4d8e4b0a5d69",
+    "isDefault": false,
+    "name": "HST-SUB",
+    "state": "Disabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "0902846e-d66e-4926-9f7b-f9d0fe1335b4",
+    "isDefault": false,
+    "name": "HCHB_NONPROD_WESTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7c54b5c2-03ae-401e-ad64-f5223a13665f",
+    "isDefault": false,
+    "name": "hmd-hminetherlands-sub",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "2d563585-15ca-4de4-9697-8f256a5e919b",
+    "isDefault": false,
+    "name": "MEDHOK_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "019b7412-1ce5-445f-8ce6-398b2b8d3f8e",
+    "isDefault": false,
+    "name": "hearsthealth-sub",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "dbd12180-8c5e-471c-9fed-39f16aabe3da",
+    "isDefault": false,
+    "name": "HBM_Engineering_DEVTEST",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "f6c89b02-21df-40cd-8315-bd8bb640aa00",
+    "isDefault": false,
+    "name": "HT-INFOWORKS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "6d22a744-4ece-4b1a-b82b-3d9f172739d5",
+    "isDefault": false,
+    "name": "HMD-MAGAZINES-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "a13e60d8-3862-4824-b2b1-93e852291378",
+    "isDefault": false,
+    "name": "SHARED_REGION_WEST_US",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "d825c034-6765-4d76-b318-6b1535e90d76",
+    "isDefault": false,
+    "name": "Access to Azure Active Directory(Converted to EA)",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "bcb2b0e9-7806-4fce-8f9d-788f3b11f7a0",
+    "isDefault": false,
+    "name": "HNP-SEATTLEPI-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "43b4731d-80ec-4e0b-a0f8-bcc90f741edd",
+    "isDefault": false,
+    "name": "HMD-CDS-PCI-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "18024309-619b-4a67-bcfe-d383233092ab",
+    "isDefault": false,
+    "name": "SHARED_REGION_WEST_US2",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "40ef0cf0-309f-4fa3-a2b7-c10cffbc069a",
+    "isDefault": false,
+    "name": "HES-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "ba309ddf-34ea-48ea-99d0-d40296d6c3cf",
+    "isDefault": false,
+    "name": "HBM-FDBUS-PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "615894eb-bb00-4387-aaeb-38965b46833a",
+    "isDefault": false,
+    "name": "HNP_SFC_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "a24e84f7-1734-471c-91dd-e03571dc45d0",
+    "isDefault": false,
+    "name": "HT_OPS_AGGREGATION",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "bc82f0ca-db5f-4c17-a890-272dfa1be891",
+    "isDefault": false,
+    "name": "HBM_FDBMEDUCATION_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "2d64b895-67fe-40ab-83b0-8f359340b6bd",
+    "isDefault": false,
+    "name": "HCN_POC",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "ab9f474e-d3ca-48ca-8748-448f7ed37dab",
+    "isDefault": false,
+    "name": "KUBRA_NONPROD_EASTUS",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "8ac2bc92-6a79-43bc-8583-e7b8461d0519",
+    "isDefault": false,
+    "name": "SHARED_REGION_SOUTH_CENTRAL_US",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "9628c11e-c719-4fb0-b8bc-95f30a1b749d",
+    "isDefault": false,
+    "name": "HMD-CDS-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "8a800c28-e6eb-4a14-b5b6-4b1e2fa5b141",
+    "isDefault": false,
+    "name": "MCG_CORP",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "0a6ff493-53a0-4849-bd0d-c47f5d5a7b94",
+    "isDefault": false,
+    "name": "HT-CHEFDEV-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "fefc5884-2a57-4ba7-b87d-93af8c7c1705",
+    "isDefault": false,
+    "name": "HST_HSC_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "6989d3cd-87bb-4836-a687-83029907c34a",
+    "isDefault": false,
+    "name": "HMD-HMIUK-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "24535967-6257-4f0d-936e-f50d1531b724",
+    "isDefault": false,
+    "name": "ht-cistest-sub",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "03406327-efac-48f9-86da-67618104eec3",
+    "isDefault": false,
+    "name": "HBM_FDB_PROD",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "7752d754-19ed-4a56-97b6-46c769e346a8",
+    "isDefault": false,
+    "name": "HMD-HEARSTAUTOS-PROD-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "id": "20974faa-2b47-407c-b065-c22205aa4877",
+    "isDefault": false,
+    "name": "HT-DATASCIENCE-SANDBOX-SUB",
+    "state": "Enabled",
+    "tenantId": "a84894e7-87c5-40e3-9783-320d0334b3cc",
+    "user": {
+      "name": "RLaney@hearstsc.com",
+      "type": "user"
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "aadProfile": null,
+    "addonProfiles": {
+      "httpApplicationRouting": {
+        "config": {
+          "HTTPApplicationRoutingZoneName": "85ebb95f6c1e4e368b12.eastus.aksapp.io"
+        },
+        "enabled": true
+      }
+    },
+    "agentPoolProfiles": [
+      {
+        "count": 3,
+        "maxPods": 30,
+        "name": "agentpool",
+        "osType": "Linux",
+        "storageProfile": "ManagedDisks",
+        "vmSize": "Standard_B2ms",
+        "vnetSubnetId": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+      }
+    ],
+    "dnsPrefix": "rlkube01",
+    "enableRbac": true,
+    "fqdn": "rlkube01-92b7ac5d.hcp.eastus.azmk8s.io",
+    "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourcegroups/rl-eastus-rg1/providers/Microsoft.ContainerService/managedClusters/rlkube01",
+    "kubernetesVersion": "1.10.6",
+    "linuxProfile": null,
+    "location": "eastus",
+    "name": "rlkube01",
+    "networkProfile": {
+      "dnsServiceIp": "10.125.41.10",
+      "dockerBridgeCidr": "172.17.0.1/16",
+      "networkPlugin": "azure",
+      "networkPolicy": null,
+      "podCidr": null,
+      "serviceCidr": "10.125.41.0/24"
+    },
+    "nodeResourceGroup": "MC_rl-eastus-rg1_rlkube01_eastus",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rl-eastus-rg1",
+    "servicePrincipalProfile": {
+      "clientId": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+    },
+    "type": "Microsoft.ContainerService/ManagedClusters"
+  }
+]
+{
+  "aadProfile": null,
+  "addonProfiles": {
+    "httpApplicationRouting": {
+      "config": {
+        "HTTPApplicationRoutingZoneName": "85ebb95f6c1e4e368b12.eastus.aksapp.io"
+      },
+      "enabled": true
+    }
+  },
+  "agentPoolProfiles": [
+    {
+      "count": 3,
+      "maxPods": 30,
+      "name": "agentpool",
+      "osType": "Linux",
+      "storageProfile": "ManagedDisks",
+      "vmSize": "Standard_B2ms",
+      "vnetSubnetId": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+    }
+  ],
+  "dnsPrefix": "rlkube01",
+  "enableRbac": true,
+  "fqdn": "rlkube01-92b7ac5d.hcp.eastus.azmk8s.io",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourcegroups/rl-eastus-rg1/providers/Microsoft.ContainerService/managedClusters/rlkube01",
+  "kubernetesVersion": "1.10.6",
+  "linuxProfile": null,
+  "location": "eastus",
+  "name": "rlkube01",
+  "networkProfile": {
+    "dnsServiceIp": "10.125.41.10",
+    "dockerBridgeCidr": "172.17.0.1/16",
+    "networkPlugin": "azure",
+    "networkPolicy": null,
+    "podCidr": null,
+    "serviceCidr": "10.125.41.0/24"
+  },
+  "nodeResourceGroup": "MC_rl-eastus-rg1_rlkube01_eastus",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-eastus-rg1",
+  "servicePrincipalProfile": {
+    "clientId": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+  },
+  "type": "Microsoft.ContainerService/ManagedClusters"
+}
+[0;32mKubernetes master[0m is running at [0;33mhttps://rlkube01-92b7ac5d.hcp.eastus.azmk8s.io:443[0m
+[0;32maddon-http-application-routing-default-http-backend[0m is running at [0;33mhttps://rlkube01-92b7ac5d.hcp.eastus.azmk8s.io:443/api/v1/namespaces/kube-system/services/addon-http-application-routing-default-http-backend/proxy[0m
+[0;32maddon-http-application-routing-nginx-ingress[0m is running at [0;33mhttp://168.62.175.248:80 http://168.62.175.248:443 [0m
+[0;32mHeapster[0m is running at [0;33mhttps://rlkube01-92b7ac5d.hcp.eastus.azmk8s.io:443/api/v1/namespaces/kube-system/services/heapster/proxy[0m
+[0;32mKubeDNS[0m is running at [0;33mhttps://rlkube01-92b7ac5d.hcp.eastus.azmk8s.io:443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy[0m
+[0;32mkubernetes-dashboard[0m is running at [0;33mhttps://rlkube01-92b7ac5d.hcp.eastus.azmk8s.io:443/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy[0m
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.

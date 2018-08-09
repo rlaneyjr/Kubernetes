@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "value": "rl-kube01"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "dnsPrefix": {
+            "value": "rlkube01"
+        },
+        "agentCount": {
+            "value": 3
+        },
+        "agentVMSize": {
+            "value": "Standard_B2ms"
+        },
+        "servicePrincipalClientId": {
+            "value": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+        },
+        "servicePrincipalClientSecret": {
+            "value": "Mczj4s4D26cypMVDPECHQhrAS8iWim9VeWtcw0i2ACk="
+        },
+        "kubernetesVersion": {
+            "value": "1.10.6"
+        },
+        "enableOmsAgent": {
+            "value": false
+        },
+        "enableHttpApplicationRouting": {
+            "value": true
+        },
+        "networkPlugin": {
+            "value": "azure"
+        },
+        "enableRBAC": {
+            "value": true
+        },
+        "vnetSubnetID": {
+            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+        },
+        "serviceCidr": {
+            "value": "10.124.41.0/24"
+        },
+        "dnsServiceIP": {
+            "value": "10.124.41.10"
+        },
+        "dockerBridgeCidr": {
+            "value": "172.17.0.1/16"
+        },
+        "scope": {
+            "value": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-eastus-rg1/providers/Microsoft.Network/virtualNetworks/rl-eastus-vnet1/subnets/rl-eastus-subnet1"
+        },
+        "principalId": {
+            "value": "18f23f76-884f-4633-aef4-ea64cc8f3bfe"
+        }
+    }
+}

@@ -1,0 +1,211 @@
+➜ git clone https://github.com/Azure-Samples/azure-voting-app-redis.git
+Cloning into 'azure-voting-app-redis'...
+remote: Counting objects: 137, done.
+remote: Total 137 (delta 0), reused 0 (delta 0), pack-reused 137
+Receiving objects: 100% (137/137), 26.45 KiB | 902.00 KiB/s, done.
+Resolving deltas: 100% (61/61), done.
+
+➜ cd azure-voting-app-redis
+
+➜ docker-compose up -d
+Creating network "azure-voting-app-redis_default" with the default driver
+Pulling azure-vote-back (redis:)...
+latest: Pulling from library/redis
+be8881be8156: Pull complete
+d6f5ea773ca3: Pull complete
+735cc65c0db4: Pull complete
+787dddf99946: Pull complete
+0733799a7c0a: Pull complete
+6d250f04811a: Pull complete
+Digest: sha256:bea966825105a2bb5215132459926bb8ff7e2b88469e84f558bc36db546c68f2
+Status: Downloaded newer image for redis:latest
+Building azure-vote-front
+Step 1/3 : FROM    tiangolo/uwsgi-nginx-flask:python3.6
+python3.6: Pulling from tiangolo/uwsgi-nginx-flask
+cc1a78bfd46b: Pull complete
+d2c05365ee2a: Pull complete
+231cb0e216d3: Pull complete
+3d2aa70286b8: Pull complete
+e80dfb6a4adf: Pull complete
+48fa359c479d: Pull complete
+7b0dd6af1ee1: Pull complete
+bf6301293045: Pull complete
+8b9f91f0801f: Pull complete
+5aa5c0b50de3: Pull complete
+2f70543ed354: Pull complete
+bae3184b2b34: Pull complete
+d3bd5926e042: Pull complete
+23daea2c9e2d: Pull complete
+f0cf2d7b29a2: Pull complete
+3becda6fe192: Pull complete
+0b23a2668d34: Pull complete
+250db31eeaa2: Pull complete
+5c00cbcda1f4: Pull complete
+3ea071b4ddde: Pull complete
+939984e6c3dc: Pull complete
+96b2d999cc96: Pull complete
+1c62ca07db25: Pull complete
+77069ce7953f: Pull complete
+95ee62492b19: Pull complete
+1c4617f34a27: Pull complete
+a92a56f5bc66: Pull complete
+Digest: sha256:6cab8fc5a8edf33600d7fc756a1fb5e683795a352e888fcc649c4f9f668caaa8
+Status: Downloaded newer image for tiangolo/uwsgi-nginx-flask:python3.6
+ ---> 839b35a9f270
+Step 2/3 : RUN     pip install redis
+ ---> Running in 3a888ab9f5d5
+Collecting redis
+  Downloading https://files.pythonhosted.org/packages/3b/f6/7a76333cf0b9251ecf49efff635015171843d9b977e4ffcf59f9c4428052/redis-2.10.6-py2.py3-none-any.whl (64kB)
+Installing collected packages: redis
+Successfully installed redis-2.10.6
+You are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Removing intermediate container 3a888ab9f5d5
+ ---> 8e475f312ec1
+Step 3/3 : ADD     /azure-vote /app
+ ---> b35c62245b2d
+Successfully built b35c62245b2d
+Successfully tagged azure-vote-front:latest
+WARNING: Image for service azure-vote-front was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating azure-vote-back  ... done
+Creating azure-vote-front ... done
+
+➜ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+azure-vote-front             latest              b35c62245b2d        15 seconds ago      938MB
+redis                        latest              4e8db158f18d        10 hours ago        83.4MB
+tiangolo/uwsgi-nginx-flask   python3.6           839b35a9f270        5 weeks ago         937MB
+
+➜ dps                                                                                                                                                                                              🐍@3.6.5
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                           NAMES
+e19eef36b5fa        azure-vote-front    "/entrypoint.sh /sta…"   31 seconds ago      Up 30 seconds       443/tcp, 0.0.0.0:8080->80/tcp   azure-vote-front
+f84ada291c42        redis               "docker-entrypoint.s…"   31 seconds ago      Up 30 seconds       0.0.0.0:6379->6379/tcp          azure-vote-back
+
+➜ docker-compose stop
+Stopping azure-vote-front ... done
+Stopping azure-vote-back  ... done
+
+➜ docker-compose down
+Removing azure-vote-front ... done
+Removing azure-vote-back  ... done
+Removing network azure-voting-app-redis_default
+
+➜ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+azure-vote-front             latest              b35c62245b2d        2 minutes ago       938MB
+redis                        latest              4e8db158f18d        10 hours ago        83.4MB
+tiangolo/uwsgi-nginx-flask   python3.6           839b35a9f270        5 weeks ago         937MB
+
+➜ az group create --name rl-demo-rg --location eastus
+{
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-demo-rg",
+  "location": "eastus",
+  "managedBy": null,
+  "name": "rl-demo-rg",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null
+}
+
+➜ az acr create --resource-group rl-demo-rg --name rldemoacr --sku Basic
+{
+  "adminUserEnabled": false,
+  "creationDate": "2018-08-04T12:15:58.285005+00:00",
+  "id": "/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-demo-rg/providers/Microsoft.ContainerRegistry/registries/rldemoacr",
+  "location": "eastus",
+  "loginServer": "rldemoacr.azurecr.io",
+  "name": "rldemoacr",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "rl-demo-rg",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "storageAccount": null,
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries"
+}
+
+➜ az acr login --name rldemoacr
+Login Succeeded
+
+➜ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+azure-vote-front             latest              b35c62245b2d        5 minutes ago       938MB
+redis                        latest              4e8db158f18d        10 hours ago        83.4MB
+tiangolo/uwsgi-nginx-flask   python3.6           839b35a9f270        5 weeks ago         937MB
+
+➜ az acr list --resource-group rl-demo-rg --query "[].{acrLoginServer:loginServer}" --output table
+AcrLoginServer
+--------------------
+rldemoacr.azurecr.io
+
+➜ docker tag azure-vote-front rldemoacr.azurecr.io/azure-vote-front:v1
+
+➜ docker images
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+azure-vote-front                        latest              b35c62245b2d        7 minutes ago       938MB
+rldemoacr.azurecr.io/azure-vote-front   v1                  b35c62245b2d        7 minutes ago       938MB
+redis                                   latest              4e8db158f18d        10 hours ago        83.4MB
+tiangolo/uwsgi-nginx-flask              python3.6           839b35a9f270        5 weeks ago         937MB
+
+➜ docker push rldemoacr.azurecr.io/azure-vote-front:v1
+The push refers to repository [rldemoacr.azurecr.io/azure-vote-front]
+5409bcc73a7c: Pushed
+052be432c4c4: Pushed
+923b57d3bcae: Pushed
+32aecf6f0e54: Pushed
+3d66a8c02b9d: Pushed
+5c848f36b7e0: Pushed
+bc43e80219a5: Pushed
+cc82e126efa5: Pushed
+58bddf88ad0e: Pushed
+b3762c9e6be7: Pushed
+c59a9679c11b: Pushed
+fdac7f19e6fe: Pushed
+27b4e7c31c1f: Pushed
+ac28b11e45ba: Pushed
+158eb89c2d33: Pushed
+45d8efea7fa9: Pushed
+7eca8476de8d: Pushed
+d79ec3f22754: Pushed
+7cb8f601ba86: Pushed
+88efead45574: Pushed
+85354f6dafec: Pushed
+5dcd9cdd007c: Pushed
+7e9e612f080d: Pushed
+9743659ff997: Pushed
+382b0665bca7: Pushed
+4e2f09da8ad8: Pushed
+a130cc33ffce: Pushed
+3fa6e458af6f: Pushed
+0f3a12fef684: Pushed
+v1: digest: sha256:396d31355890b42388e4b4c87258dc351b7faac1a335fbf017b9eb49590ce790 size: 6379
+
+➜ az acr repository list --name rldemoacr -o table
+Result
+----------------
+azure-vote-front
+
+➜ az acr repository show-tags --name rldemoacr --repository azure-vote-front -o table
+Result
+--------
+v1
+
+➜ az ad sp create-for-rbac --skip-assignment
+{
+  "appId": "4ed634e0-0e87-412a-83c4-3ee25ac94f6a",
+  "displayName": "azure-cli-2018-08-04-12-23-27",
+  "name": "http://azure-cli-2018-08-04-12-23-27",
+  "password": "b09ba531-b192-4ef1-98d2-a568fab04981",
+  "tenant": "a84894e7-87c5-40e3-9783-320d0334b3cc"
+}
+
+➜ az acr show --name rldemoacr --resource-group rl-demo-rg --query "id" --output tsv
+/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-demo-rg/providers/Microsoft.ContainerRegistry/registries/rldemoacr
+
+➜ az role assignment create --assignee 4ed634e0-0e87-412a-83c4-3ee25ac94f6a --role Reader --scope /subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-demo-rg/providers/Microsoft.ContainerRegistry/registries/rldemoacr
+The client 'RLaney@hearstsc.com' with object id '019a4d7c-5354-4e67-8d83-4a844416a827' does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/563575e7-d5b3-4528-8f64-18a2e7601a11/resourceGroups/rl-demo-rg/providers/Microsoft.ContainerRegistry/registries/rldemoacr/providers/Microsoft.Authorization/roleAssignments/522452c6-cf74-43f1-95f6-09d1c42982e2'.
+

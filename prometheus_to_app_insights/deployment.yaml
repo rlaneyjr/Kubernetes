@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ptai-deployment
+  labels:
+    app: ptai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pta
+  template:
+    metadata:
+      labels:
+        app: pta
+    spec:
+      containers:
+      - name: pta
+        image: eladiwmicrosoft/prom_to_app_insights:latest
+        env:
+        - name: APPINSIGHTS_INSTRUMENTATIONKEY
+          value: "ikey"
+        - name: PROMETHEUS_URL
+          value: "url"
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+

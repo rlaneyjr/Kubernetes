@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: prom-server
+spec:
+  selector:
+    app: pserver
+  ports:
+  - protocol: TCP
+    port: 9090
+  type: LoadBalancer
