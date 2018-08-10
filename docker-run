@@ -1,0 +1,5 @@
+docker run -it \
+	-v <path-to-cluster-certificates>:/cluster \
+	-v <path-to-your-source-code-directory--optional>:/go-code \
+	-p 8080:8080 \
+radumatei/kubectl-helm-draft

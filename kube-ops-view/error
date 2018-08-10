@@ -1,0 +1,170 @@
+kube-ops-view master ✗ 4h37m ◒ ➜ kubectl describe pod                                                                                                                                                                                🐍@3.6.5
+Name:           kube-ops-view-javascript-6c87b4d7dc-fffhh
+Namespace:      default
+Node:           aks-agentpool-69863697-2/10.125.40.35
+Start Time:     Thu, 09 Aug 2018 16:28:02 -0400
+Labels:         app=kube-ops-view-javascript
+                draft=kube-ops-view
+                pod-template-hash=2743608387
+Annotations:    buildID=01CMG5WM582F22QN8PY3A1TJ3W
+Status:         Pending
+IP:             10.125.40.63
+Controlled By:  ReplicaSet/kube-ops-view-javascript-6c87b4d7dc
+Containers:
+  javascript:
+    Container ID:
+    Image:          rleastusacr.azurecr.io/kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7
+    Image ID:
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     100m
+      memory:  128Mi
+    Requests:
+      cpu:        100m
+      memory:     128Mi
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72wvf (ro)
+Conditions:
+  Type           Status
+  Initialized    True
+  Ready          False
+  PodScheduled   True
+Volumes:
+  default-token-72wvf:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-72wvf
+    Optional:    false
+QoS Class:       Guaranteed
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason                 Age               From                               Message
+  ----     ------                 ----              ----                               -------
+  Normal   Scheduled              1m                default-scheduler                  Successfully assigned kube-ops-view-javascript-6c87b4d7dc-fffhh to aks-agentpool-69863697-2
+  Normal   SuccessfulMountVolume  1m                kubelet, aks-agentpool-69863697-2  MountVolume.SetUp succeeded for volume "default-token-72wvf"
+  Normal   SandboxChanged         1m (x3 over 1m)   kubelet, aks-agentpool-69863697-2  Pod sandbox changed, it will be killed and re-created.
+  Normal   BackOff                27s (x4 over 1m)  kubelet, aks-agentpool-69863697-2  Back-off pulling image "rleastusacr.azurecr.io/kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7"
+  Warning  Failed                 27s (x4 over 1m)  kubelet, aks-agentpool-69863697-2  Error: ImagePullBackOff
+  Normal   Pulling                14s (x4 over 1m)  kubelet, aks-agentpool-69863697-2  pulling image "rleastusacr.azurecr.io/kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7"
+  Warning  Failed                 14s (x4 over 1m)  kubelet, aks-agentpool-69863697-2  Failed to pull image "rleastusacr.azurecr.io/kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7": [rpc error: code = Unknown desc = Error: image kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7 not found, rpc error: code = Unknown desc = Error: image kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7 not found]
+  Warning  Failed                 14s (x4 over 1m)  kubelet, aks-agentpool-69863697-2  Error: ErrImagePull
+
+time="2018-08-09T20:26:26Z" level=info msg="Running command docker login -u 00000000-0000-0000-0000-000000000000 --password-stdin rleastusacr.azurecr.io"
+Login Succeeded
+time="2018-08-09T20:26:27Z" level=info msg="Running command docker build --pull -f Dockerfile -t rleastusacr.azurecr.io/kube-ops-view:6835d0cd40dac048061482f26fd019a1b0770ab7 ."
+Downloading build context [=>                                                 ]  3.578kB/147.9kBDownloading build context [==================================================>]  147.9kB/147.9kBSending build context to Docker daemon    490kB
+Step 1/12 : FROM alpine:3.6
+3.6: Pulling from library/alpine
+a073c86ecf9e: Pulling fs layer
+a073c86ecf9e: Verifying Checksum
+a073c86ecf9e: Download complete
+a073c86ecf9e: Pull complete
+Digest: sha256:de5701d6a3a36dc6a5db260d21be0422fd30dd2d158c1e048b34263e73205cb6
+Status: Downloaded newer image for alpine:3.6
+ ---> da579b235e92
+Step 2/12 : MAINTAINER Henning Jacobs <henning@jacobs1.de>
+ ---> Running in 759610525a9a
+Removing intermediate container 759610525a9a
+ ---> a3328a9fc7e8
+Step 3/12 : EXPOSE 8080
+ ---> Running in 1cae42f2ddf4
+Removing intermediate container 1cae42f2ddf4
+ ---> fcee67cfe374
+Step 4/12 : RUN apk add --no-cache python3 python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev ca-certificates &&     python3 -m ensurepip &&     rm -r /usr/lib/python*/ensurepip &&     pip3 install --upgrade pip setuptools gevent &&     apk del python3-dev gcc musl-dev zlib-dev libffi-dev openssl-dev &&     rm -rf /var/cache/apk/* /root/.cache /tmp/*
+ ---> Running in db70a83e5d68
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.6/community/x86_64/APKINDEX.tar.gz
+(1/31) Installing ca-certificates (20161130-r2)
+(2/31) Installing binutils-libs (2.30-r1)
+(3/31) Installing binutils (2.30-r1)
+(4/31) Installing gmp (6.1.2-r0)
+(5/31) Installing isl (0.17.1-r0)
+(6/31) Installing libgomp (6.3.0-r4)
+(7/31) Installing libatomic (6.3.0-r4)
+(8/31) Installing pkgconf (1.3.7-r0)
+(9/31) Installing libgcc (6.3.0-r4)
+(10/31) Installing mpfr3 (3.1.5-r0)
+(11/31) Installing mpc1 (1.0.3-r0)
+(12/31) Installing libstdc++ (6.3.0-r4)
+(13/31) Installing gcc (6.3.0-r4)
+(14/31) Installing libffi (3.2.1-r3)
+(15/31) Installing libffi-dev (3.2.1-r3)
+(16/31) Installing musl-dev (1.1.16-r14)
+(17/31) Installing zlib-dev (1.2.11-r0)
+(18/31) Installing libcrypto1.0 (1.0.2o-r1)
+(19/31) Installing libssl1.0 (1.0.2o-r1)
+(20/31) Installing openssl-dev (1.0.2o-r1)
+(21/31) Installing libbz2 (1.0.6-r5)
+(22/31) Installing expat (2.2.0-r1)
+(23/31) Installing gdbm (1.12-r0)
+(24/31) Installing xz-libs (5.2.3-r0)
+(25/31) Installing ncurses-terminfo-base (6.0_p20171125-r0)
+(26/31) Installing ncurses-terminfo (6.0_p20171125-r0)
+(27/31) Installing ncurses-libs (6.0_p20171125-r0)
+(28/31) Installing readline (6.3.008-r5)
+(29/31) Installing sqlite-libs (3.20.1-r2)
+(30/31) Installing python3 (3.6.1-r3)
+(31/31) Installing python3-dev (3.6.1-r3)
+Executing busybox-1.26.2-r11.trigger
+Executing ca-certificates-20161130-r2.trigger
+OK: 198 MiB in 44 packages
+Requirement already satisfied: setuptools in /usr/lib/python3.6/site-packages
+Requirement already satisfied: pip in /usr/lib/python3.6/site-packages
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/5f/25/e52d3f31441505a5f3af41213346e5b6c221c9e086a166f3703d2ddaf940/pip-18.0-py2.py3-none-any.whl (1.3MB)
+Collecting setuptools
+  Downloading https://files.pythonhosted.org/packages/ff/f4/385715ccc461885f3cedf57a41ae3c12b5fec3f35cce4c8706b1a112a133/setuptools-40.0.0-py2.py3-none-any.whl (567kB)
+Collecting gevent
+  Downloading https://files.pythonhosted.org/packages/e6/0a/fc345c6e6161f84484870dbcaa58e427c10bd9bdcd08a69bed3d6b398bf1/gevent-1.3.5.tar.gz (4.6MB)
+[91m  Ignoring cffi: markers 'sys_platform == "win32" and platform_python_implementation == "CPython"' don't match your environment
+[0mCollecting greenlet>=0.4.13; platform_python_implementation == "CPython" (from gevent)
+  Downloading https://files.pythonhosted.org/packages/5d/82/2e53a8def6f99db51992ca3a0a2448c3bbec1a9db3a7cbf7d5dad011e138/greenlet-0.4.14.tar.gz (59kB)
+Installing collected packages: pip, setuptools, greenlet, gevent
+  Found existing installation: pip 9.0.1
+    Uninstalling pip-9.0.1:
+      Successfully uninstalled pip-9.0.1
+  Found existing installation: setuptools 28.8.0
+    Uninstalling setuptools-28.8.0:
+      Successfully uninstalled setuptools-28.8.0
+  Running setup.py install for greenlet: started
+    Running setup.py install for greenlet: finished with status 'done'
+  Running setup.py install for gevent: started
+    Running setup.py install for gevent: still running...
+    Running setup.py install for gevent: finished with status 'done'
+Successfully installed gevent-1.3.5 greenlet-0.4.14 pip-18.0 setuptools-40.0.0
+[91mWARNING: Ignoring APKINDEX.84815163.tar.gz: No such file or directory
+WARNING: Ignoring APKINDEX.24d64ab1.tar.gz: No such file or directory
+[0m(1/19) Purging gcc (6.3.0-r4)
+(2/19) Purging binutils (2.30-r1)
+(3/19) Purging libatomic (6.3.0-r4)
+(4/19) Purging libgomp (6.3.0-r4)
+(5/19) Purging libffi-dev (3.2.1-r3)
+(6/19) Purging musl-dev (1.1.16-r14)
+(7/19) Purging openssl-dev (1.0.2o-r1)
+(8/19) Purging zlib-dev (1.2.11-r0)
+(9/19) Purging libssl1.0 (1.0.2o-r1)
+(10/19) Purging python3-dev (3.6.1-r3)
+(11/19) Purging binutils-libs (2.30-r1)
+(12/19) Purging mpc1 (1.0.3-r0)
+(13/19) Purging mpfr3 (3.1.5-r0)
+(14/19) Purging isl (0.17.1-r0)
+(15/19) Purging gmp (6.1.2-r0)
+(16/19) Purging pkgconf (1.3.7-r0)
+(17/19) Purging libstdc++ (6.3.0-r4)
+(18/19) Purging libgcc (6.3.0-r4)
+(19/19) Purging libcrypto1.0 (1.0.2o-r1)
+Executing busybox-1.26.2-r11.trigger
+OK: 70 MiB in 25 packages
+Removing intermediate container db70a83e5d68
+ ---> 0bd9517e40f9
+Step 5/12 : COPY scm-source.json /
+COPY failed: stat /var/lib/docker/tmp/docker-builder055529510/scm-source.json: no such file or directory
+time="2018-08-09T20:27:58Z" level=error msg="Failed to run command: exit status 1"
+Build ID: aa1 failed after 1m33.542079544s
