@@ -1,0 +1,172 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert -c
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: netbox
+  name: netbox
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: netbox
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: DB_HOST
+              name: netbox-netbox-env
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: DB_NAME
+              name: netbox-netbox-env
+        - name: DB_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: DB_PASSWORD
+              name: netbox-netbox-env
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              key: DB_USER
+              name: netbox-netbox-env
+        - name: EMAIL_FROM
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_FROM
+              name: netbox-netbox-env
+        - name: EMAIL_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_PASSWORD
+              name: netbox-netbox-env
+        - name: EMAIL_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_PORT
+              name: netbox-netbox-env
+        - name: EMAIL_SERVER
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_SERVER
+              name: netbox-netbox-env
+        - name: EMAIL_TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_TIMEOUT
+              name: netbox-netbox-env
+        - name: EMAIL_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              key: EMAIL_USERNAME
+              name: netbox-netbox-env
+        - name: MAX_PAGE_SIZE
+          valueFrom:
+            configMapKeyRef:
+              key: MAX_PAGE_SIZE
+              name: netbox-netbox-env
+        - name: MEDIA_ROOT
+          valueFrom:
+            configMapKeyRef:
+              key: MEDIA_ROOT
+              name: netbox-netbox-env
+        - name: NAPALM_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: NAPALM_PASSWORD
+              name: netbox-netbox-env
+        - name: NAPALM_TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              key: NAPALM_TIMEOUT
+              name: netbox-netbox-env
+        - name: NAPALM_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              key: NAPALM_USERNAME
+              name: netbox-netbox-env
+        - name: SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: SECRET_KEY
+              name: netbox-netbox-env
+        - name: SUPERUSER_API_TOKEN
+          valueFrom:
+            configMapKeyRef:
+              key: SUPERUSER_API_TOKEN
+              name: netbox-netbox-env
+        - name: SUPERUSER_EMAIL
+          valueFrom:
+            configMapKeyRef:
+              key: SUPERUSER_EMAIL
+              name: netbox-netbox-env
+        - name: SUPERUSER_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: SUPERUSER_NAME
+              name: netbox-netbox-env
+        - name: SUPERUSER_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: SUPERUSER_PASSWORD
+              name: netbox-netbox-env
+        image: rleastusacr.azurecr.io/netbox:v1
+        name: netbox
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/netbox/startup_scripts
+          name: netbox-claim0
+          readOnly: true
+        - mountPath: /opt/netbox/initializers
+          name: netbox-claim1
+          readOnly: true
+        - mountPath: /etc/netbox/config
+          name: netbox-claim2
+          readOnly: true
+        - mountPath: /etc/netbox-nginx/
+          name: netbox-nginx-config
+        - mountPath: /opt/netbox/netbox/static
+          name: netbox-static-files
+        - mountPath: /opt/netbox/netbox/media
+          name: netbox-media-files
+        - mountPath: /etc/netbox/reports
+          name: netbox-report-files
+          readOnly: true
+      restartPolicy: Always
+      volumes:
+      - name: netbox-claim0
+        persistentVolumeClaim:
+          claimName: netbox-claim0
+          readOnly: true
+      - name: netbox-claim1
+        persistentVolumeClaim:
+          claimName: netbox-claim1
+          readOnly: true
+      - name: netbox-claim2
+        persistentVolumeClaim:
+          claimName: netbox-claim2
+          readOnly: true
+      - name: netbox-nginx-config
+        persistentVolumeClaim:
+          claimName: netbox-nginx-config
+      - name: netbox-static-files
+        persistentVolumeClaim:
+          claimName: netbox-static-files
+      - name: netbox-media-files
+        persistentVolumeClaim:
+          claimName: netbox-media-files
+      - name: netbox-report-files
+        persistentVolumeClaim:
+          claimName: netbox-report-files
+          readOnly: true
+status: {}

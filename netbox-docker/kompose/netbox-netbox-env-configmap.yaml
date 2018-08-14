@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  DB_HOST: postgres
+  DB_NAME: netbox
+  DB_PASSWORD: AjsIG2fUvR
+  DB_USER: netbox
+  EMAIL_FROM: rlaney@hearstsc.com
+  EMAIL_PASSWORD: FunckyColdMadina22$
+  EMAIL_PORT: "25"
+  EMAIL_SERVER: https://outlook.office365.com/owa/?realm=hearst.com
+  EMAIL_TIMEOUT: "5"
+  EMAIL_USERNAME: rlaney
+  MAX_PAGE_SIZE: "0"
+  MEDIA_ROOT: /opt/netbox/netbox/media
+  NAPALM_PASSWORD: FunckyColdMadina22$
+  NAPALM_TIMEOUT: "10"
+  NAPALM_USERNAME: rlaney
+  SECRET_KEY: JVBMvt0VFvFArYciKZdN6x0A42cljCeG
+  SUPERUSER_API_TOKEN: 66b1b301d87e22ea3175b38d5d01d8757fdc402913ba12c50525930b95a97d5f0dc3b0523ad9eefc39500a192c94e455ac2b3996dfd054a7fae9073e354c74f9
+  SUPERUSER_EMAIL: rlaney@hearstsc.com
+  SUPERUSER_NAME: rlaney
+  SUPERUSER_PASSWORD: ralrox22
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: netbox-netbox-env
+  name: netbox-netbox-env

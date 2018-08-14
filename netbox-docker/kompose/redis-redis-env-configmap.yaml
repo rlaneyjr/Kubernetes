@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  REDIS_DB: "0"
+  REDIS_DT: "300"
+  REDIS_HOST: redis
+  REDIS_PASSWORD: AjsIG2fUvR
+  REDIS_PORT: "6379"
+  WEBHOOKS_ENABLED: "True"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redis-redis-env
+  name: redis-redis-env
