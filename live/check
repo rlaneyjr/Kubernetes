@@ -1,0 +1,3 @@
+  The admin user for the web applications is cmkadmin with password: 3uSl6B13
+  (It can be changed with 'htpasswd -m ~/etc/htpasswd cmkadmin' as site user.
+
