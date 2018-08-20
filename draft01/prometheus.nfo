@@ -1,0 +1,95 @@
+~/P/K/draft01 master ❯ helm install stable/prometheus                                                                                                                                                                               *🐍@3.6.5
+NAME:   moldy-magpie
+LAST DEPLOYED: Sun Aug 19 15:04:59 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/ServiceAccount
+NAME                                        SECRETS  AGE
+moldy-magpie-prometheus-alertmanager        1        2s
+moldy-magpie-prometheus-kube-state-metrics  1        2s
+moldy-magpie-prometheus-node-exporter       1        2s
+moldy-magpie-prometheus-pushgateway         1        2s
+moldy-magpie-prometheus-server              1        2s
+
+==> v1beta1/ClusterRoleBinding
+NAME                                        AGE
+moldy-magpie-prometheus-kube-state-metrics  2s
+moldy-magpie-prometheus-server              2s
+
+==> v1/Service
+NAME                                        TYPE       CLUSTER-IP    EXTERNAL-IP  PORT(S)   AGE
+moldy-magpie-prometheus-alertmanager        ClusterIP  10.125.41.5   <none>       80/TCP    2s
+moldy-magpie-prometheus-kube-state-metrics  ClusterIP  None          <none>       80/TCP    2s
+moldy-magpie-prometheus-node-exporter       ClusterIP  None          <none>       9100/TCP  2s
+moldy-magpie-prometheus-pushgateway         ClusterIP  10.125.41.52  <none>       9091/TCP  2s
+moldy-magpie-prometheus-server              ClusterIP  10.125.41.46  <none>       80/TCP    2s
+
+==> v1beta1/DaemonSet
+NAME                                   DESIRED  CURRENT  READY  UP-TO-DATE  AVAILABLE  NODE SELECTOR  AGE
+moldy-magpie-prometheus-node-exporter  3        3        0      3           0          <none>         2s
+
+==> v1beta1/Deployment
+NAME                                        DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+moldy-magpie-prometheus-alertmanager        1        1        1           0          2s
+moldy-magpie-prometheus-kube-state-metrics  1        1        1           0          2s
+moldy-magpie-prometheus-pushgateway         1        1        1           0          2s
+moldy-magpie-prometheus-server              1        1        1           0          2s
+
+==> v1/ConfigMap
+NAME                                  DATA  AGE
+moldy-magpie-prometheus-alertmanager  1     2s
+moldy-magpie-prometheus-server        3     2s
+
+==> v1/PersistentVolumeClaim
+NAME                                  STATUS   VOLUME                                    CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+moldy-magpie-prometheus-alertmanager  Pending  default                                   2s
+moldy-magpie-prometheus-server        Bound    pvc-c5d35a4f-a3e2-11e8-884d-9a6f6b915e47  8Gi  RWO  default  2s
+
+==> v1beta1/ClusterRole
+NAME                                        AGE
+moldy-magpie-prometheus-kube-state-metrics  2s
+moldy-magpie-prometheus-server              2s
+
+==> v1/Pod(related)
+NAME                                                        READY  STATUS             RESTARTS  AGE
+moldy-magpie-prometheus-node-exporter-d22w5                 0/1    ContainerCreating  0         2s
+moldy-magpie-prometheus-node-exporter-pqjlt                 0/1    ContainerCreating  0         2s
+moldy-magpie-prometheus-node-exporter-vffjx                 0/1    ContainerCreating  0         2s
+moldy-magpie-prometheus-alertmanager-7f844658c6-bjl68       0/2    Pending            0         2s
+moldy-magpie-prometheus-kube-state-metrics-9cf878cf7-dg577  0/1    ContainerCreating  0         1s
+moldy-magpie-prometheus-pushgateway-99cc9fc96-plwrl         0/1    ContainerCreating  0         2s
+moldy-magpie-prometheus-server-54b867b58-7zzzs              0/2    Init:0/1           0         1s
+
+
+NOTES:
+The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+moldy-magpie-prometheus-server.default.svc.cluster.local
+
+
+Get the Prometheus server URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9090
+
+
+The Prometheus alertmanager can be accessed via port 80 on the following DNS name from within your cluster:
+moldy-magpie-prometheus-alertmanager.default.svc.cluster.local
+
+
+Get the Alertmanager URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=alertmanager" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9093
+
+
+The Prometheus PushGateway can be accessed via port 9091 on the following DNS name from within your cluster:
+moldy-magpie-prometheus-pushgateway.default.svc.cluster.local
+
+
+Get the PushGateway URL by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=pushgateway" -o jsonpath="{.items[0].metadata.name}")
+  kubectl --namespace default port-forward $POD_NAME 9091
+
+For more information on running Prometheus, visit:
+https://prometheus.io/
+

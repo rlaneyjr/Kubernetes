@@ -1,0 +1,102 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "newVMName": {
+      "type": "string",
+      "defaultValue": "azdevlab01"
+    },
+    "labName": {
+      "type": "string",
+      "defaultValue": "ht-devtest-lab01"
+    },
+    "size": {
+      "type": "string",
+      "defaultValue": "Standard_B2s"
+    },
+    "userName": {
+      "type": "string",
+      "defaultValue": "RLaney"
+    },
+    "sshKey": {
+      "type": "securestring"
+    },
+    "Run_Bash_scriptFileUris": {
+      "type": "string",
+      "defaultValue": "[[\"https://gist.github.com/initcron/40b71211cb693f541ce35fe3fb1adb11\"]"
+    },
+    "Run_Bash_scriptToRun": {
+      "type": "string",
+      "defaultValue": "k8s-user-data.sh"
+    },
+    "Run_Bash_scriptArguments": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "Run_Bash_skipDos2Unix": {
+      "type": "bool",
+      "defaultValue": true
+    }
+  },
+  "variables": {
+    "labSubnetName": "[concat(variables('labVirtualNetworkName'), 'Subnet')]",
+    "labVirtualNetworkId": "[resourceId('Microsoft.DevTestLab/labs/virtualnetworks', parameters('labName'), variables('labVirtualNetworkName'))]",
+    "labVirtualNetworkName": "[concat('Dtl', parameters('labName'))]",
+    "vmId": "[resourceId ('Microsoft.DevTestLab/labs/virtualmachines', parameters('labName'), parameters('newVMName'))]",
+    "vmName": "[concat(parameters('labName'), '/', parameters('newVMName'))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2017-04-26-preview",
+      "type": "Microsoft.DevTestLab/labs/virtualmachines",
+      "name": "[concat(variables('vmName'), padLeft(copyIndex(), 2, '0'))]",
+      "location": "[resourceGroup().location]",
+      "copy": {
+        "name": "[parameters('newVMName')]",
+        "count": 3
+      },
+      "properties": {
+        "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",
+        "notes": "Ubuntu Server 18.04 LTS",
+        "galleryImageReference": {
+          "offer": "UbuntuServer",
+          "publisher": "Canonical",
+          "sku": "18.04-LTS",
+          "osType": "Linux",
+          "version": "latest"
+        },
+        "size": "[parameters('size')]",
+        "userName": "[parameters('userName')]",
+        "sshKey": "[parameters('sshKey')]",
+        "isAuthenticationWithSshKey": true,
+        "artifacts": [
+          {
+            "artifactId": "[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'linux-run-bash')]",
+            "parameters": [
+              {
+                "name": "scriptFileUris",
+                "value": "[parameters('Run_Bash_scriptFileUris')]"
+              },
+              {
+                "name": "scriptToRun",
+                "value": "[parameters('Run_Bash_scriptToRun')]"
+              },
+              {
+                "name": "scriptArguments",
+                "value": "[parameters('Run_Bash_scriptArguments')]"
+              },
+              {
+                "name": "skipDos2Unix",
+                "value": "[parameters('Run_Bash_skipDos2Unix')]"
+              }
+            ]
+          }
+        ],
+        "labSubnetName": "[variables('labSubnetName')]",
+        "disallowPublicIpAddress": false,
+        "storageType": "Premium",
+        "allowClaim": false
+      }
+    }
+  ]
+}
