@@ -1,0 +1,3218 @@
+[
+
+{"svc": "istio-citadel.istio-system.svc.cluster.local:grpc-citadel", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.22",
+      "Port": 8060,
+      "ServicePort": {
+        "name": "grpc-citadel",
+        "port": 8060,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-citadel-7d8f9748c5-55b5h.istio-system"
+    },
+    "service": {
+      "hostname": "istio-citadel.istio-system.svc.cluster.local",
+      "address": "10.125.41.218",
+      "ports": [
+        {
+          "name": "grpc-citadel",
+          "port": 8060,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "istio": "citadel",
+      "pod-template-hash": "3849530471"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-citadel-service-account"
+  },
+
+{}]},
+{"svc": "istio-citadel.istio-system.svc.cluster.local:http-monitoring", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.22",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-citadel-7d8f9748c5-55b5h.istio-system"
+    },
+    "service": {
+      "hostname": "istio-citadel.istio-system.svc.cluster.local",
+      "address": "10.125.41.218",
+      "ports": [
+        {
+          "name": "grpc-citadel",
+          "port": 8060,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "istio": "citadel",
+      "pod-template-hash": "3849530471"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-citadel-service-account"
+  },
+
+{}]},
+{"svc": "addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local:http", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.11",
+      "Port": 80,
+      "ServicePort": {
+        "name": "http",
+        "port": 80,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://addon-http-application-routing-nginx-ingress-controller-55z6znp.kube-system"
+    },
+    "service": {
+      "hostname": "addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+      "address": "10.125.41.226",
+      "ports": [
+        {
+          "name": "http",
+          "port": 80,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "app": "addon-http-application-routing-nginx-ingress",
+      "pod-template-hash": "1178529738"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/addon-http-application-routing-nginx-ingress-serviceaccount"
+  },
+
+{}]},
+{"svc": "addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local:https", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.11",
+      "Port": 443,
+      "ServicePort": {
+        "name": "https",
+        "port": 443,
+        "protocol": "HTTPS"
+      },
+      "UID": "kubernetes://addon-http-application-routing-nginx-ingress-controller-55z6znp.kube-system"
+    },
+    "service": {
+      "hostname": "addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+      "address": "10.125.41.226",
+      "ports": [
+        {
+          "name": "http",
+          "port": 80,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "app": "addon-http-application-routing-nginx-ingress",
+      "pod-template-hash": "1178529738"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/addon-http-application-routing-nginx-ingress-serviceaccount"
+  },
+
+{}]},
+{"svc": "istio-telemetry.istio-system.svc.cluster.local:grpc-mixer", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.29",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-8bw8l.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.30",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-dhbhl.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.43",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-6btng.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.68",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-qntmg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.86",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-m58jg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-telemetry.istio-system.svc.cluster.local:grpc-mixer-mtls", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.29",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-8bw8l.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.30",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-dhbhl.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.43",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-6btng.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.68",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-qntmg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.86",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-m58jg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-telemetry.istio-system.svc.cluster.local:http-monitoring", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.29",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-8bw8l.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.30",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-dhbhl.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.43",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-6btng.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.68",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-qntmg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.86",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-m58jg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-telemetry.istio-system.svc.cluster.local:prometheus", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.29",
+      "Port": 42422,
+      "ServicePort": {
+        "name": "prometheus",
+        "port": 42422,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-8bw8l.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.30",
+      "Port": 42422,
+      "ServicePort": {
+        "name": "prometheus",
+        "port": 42422,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-dhbhl.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.43",
+      "Port": 42422,
+      "ServicePort": {
+        "name": "prometheus",
+        "port": 42422,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-6btng.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.68",
+      "Port": 42422,
+      "ServicePort": {
+        "name": "prometheus",
+        "port": 42422,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-qntmg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.86",
+      "Port": 42422,
+      "ServicePort": {
+        "name": "prometheus",
+        "port": 42422,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-telemetry-6c587bdbc4-m58jg.istio-system"
+    },
+    "service": {
+      "hostname": "istio-telemetry.istio-system.svc.cluster.local",
+      "address": "10.125.41.64",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "prometheus",
+          "port": 42422,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "telemetry",
+      "istio": "mixer",
+      "istio-mixer-type": "telemetry",
+      "pod-template-hash": "2714368670"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-pilot.istio-system.svc.cluster.local:grpc-xds", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.64",
+      "Port": 15010,
+      "ServicePort": {
+        "name": "grpc-xds",
+        "port": 15010,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-pilot-5795d6d695-7tpnv.istio-system"
+    },
+    "service": {
+      "hostname": "istio-pilot.istio-system.svc.cluster.local",
+      "address": "10.125.41.193",
+      "ports": [
+        {
+          "name": "grpc-xds",
+          "port": 15010,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "https-xds",
+          "port": 15011,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "http-legacy-discovery",
+          "port": 8080,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "pilot",
+      "istio": "pilot",
+      "pod-template-hash": "1351828251"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+  },
+
+{}]},
+{"svc": "istio-pilot.istio-system.svc.cluster.local:https-xds", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.64",
+      "Port": 15011,
+      "ServicePort": {
+        "name": "https-xds",
+        "port": 15011,
+        "protocol": "HTTPS"
+      },
+      "UID": "kubernetes://istio-pilot-5795d6d695-7tpnv.istio-system"
+    },
+    "service": {
+      "hostname": "istio-pilot.istio-system.svc.cluster.local",
+      "address": "10.125.41.193",
+      "ports": [
+        {
+          "name": "grpc-xds",
+          "port": 15010,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "https-xds",
+          "port": 15011,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "http-legacy-discovery",
+          "port": 8080,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "pilot",
+      "istio": "pilot",
+      "pod-template-hash": "1351828251"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+  },
+
+{}]},
+{"svc": "istio-pilot.istio-system.svc.cluster.local:http-legacy-discovery", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.64",
+      "Port": 8080,
+      "ServicePort": {
+        "name": "http-legacy-discovery",
+        "port": 8080,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-pilot-5795d6d695-7tpnv.istio-system"
+    },
+    "service": {
+      "hostname": "istio-pilot.istio-system.svc.cluster.local",
+      "address": "10.125.41.193",
+      "ports": [
+        {
+          "name": "grpc-xds",
+          "port": 15010,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "https-xds",
+          "port": 15011,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "http-legacy-discovery",
+          "port": 8080,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "pilot",
+      "istio": "pilot",
+      "pod-template-hash": "1351828251"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+  },
+
+{}]},
+{"svc": "istio-pilot.istio-system.svc.cluster.local:http-monitoring", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.64",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-pilot-5795d6d695-7tpnv.istio-system"
+    },
+    "service": {
+      "hostname": "istio-pilot.istio-system.svc.cluster.local",
+      "address": "10.125.41.193",
+      "ports": [
+        {
+          "name": "grpc-xds",
+          "port": 15010,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "https-xds",
+          "port": 15011,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "http-legacy-discovery",
+          "port": 8080,
+          "protocol": "HTTP"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "pilot",
+      "istio": "pilot",
+      "pod-template-hash": "1351828251"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+  },
+
+{}]},
+{"svc": "istio-egressgateway.istio-system.svc.cluster.local:http2", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.82",
+      "Port": 80,
+      "ServicePort": {
+        "name": "http2",
+        "port": 80,
+        "protocol": "HTTP2"
+      },
+      "UID": "kubernetes://istio-egressgateway-676c8546c5-9pfq2.istio-system"
+    },
+    "service": {
+      "hostname": "istio-egressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.93",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-egressgateway",
+      "istio": "egressgateway",
+      "pod-template-hash": "2327410271"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-egressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-egressgateway.istio-system.svc.cluster.local:https", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.82",
+      "Port": 443,
+      "ServicePort": {
+        "name": "https",
+        "port": 443,
+        "protocol": "HTTPS"
+      },
+      "UID": "kubernetes://istio-egressgateway-676c8546c5-9pfq2.istio-system"
+    },
+    "service": {
+      "hostname": "istio-egressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.93",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-egressgateway",
+      "istio": "egressgateway",
+      "pod-template-hash": "2327410271"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-egressgateway-service-account"
+  },
+
+{}]},
+{"svc": "prometheus.istio-system.svc.cluster.local:http-prometheus", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.87",
+      "Port": 9090,
+      "ServicePort": {
+        "name": "http-prometheus",
+        "port": 9090,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://prometheus-6ffc56584f-gqd2l.istio-system"
+    },
+    "service": {
+      "hostname": "prometheus.istio-system.svc.cluster.local",
+      "address": "10.125.41.83",
+      "ports": [
+        {
+          "name": "http-prometheus",
+          "port": 9090,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "prometheus",
+      "pod-template-hash": "2997121409"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/prometheus"
+  },
+
+{}]},
+{"svc": "metrics-server.kube-system.svc.cluster.local:", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.69",
+      "Port": 443,
+      "ServicePort": {
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://metrics-server-789c47657d-8vl64.kube-system"
+    },
+    "service": {
+      "hostname": "metrics-server.kube-system.svc.cluster.local",
+      "address": "10.125.41.125",
+      "ports": [
+        {
+          "port": 443,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:51Z"
+    },
+    "labels": {
+      "k8s-app": "metrics-server",
+      "pod-template-hash": "3457032138"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/metrics-server"
+  },
+
+{}]},
+{"svc": "kubernetes.default.svc.cluster.local:https", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "172.31.2.110",
+      "Port": 443,
+      "ServicePort": {
+        "name": "https",
+        "port": 443,
+        "protocol": "HTTPS"
+      },
+      "UID": ""
+    },
+    "service": {
+      "hostname": "kubernetes.default.svc.cluster.local",
+      "address": "10.125.41.1",
+      "ports": [
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:25Z"
+    }
+  },
+
+{}]},
+{"svc": "addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local:", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.54",
+      "Port": 8080,
+      "ServicePort": {
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://addon-http-application-routing-default-http-backend-74d455nwpwd.kube-system"
+    },
+    "service": {
+      "hostname": "addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local",
+      "address": "10.125.41.162",
+      "ports": [
+        {
+          "port": 80,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "app": "addon-http-application-routing-default-http-backend",
+      "pod-template-hash": "308011170"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/default"
+  },
+
+{}]},
+{"svc": "istio-statsd-prom-bridge.istio-system.svc.cluster.local:statsd-prom", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.79",
+      "Port": 9102,
+      "ServicePort": {
+        "name": "statsd-prom",
+        "port": 9102,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-statsd-prom-bridge-549d687fd9-9vrmr.istio-system"
+    },
+    "service": {
+      "hostname": "istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+      "address": "10.125.41.127",
+      "ports": [
+        {
+          "name": "statsd-prom",
+          "port": 9102,
+          "protocol": "TCP"
+        },
+        {
+          "name": "statsd-udp",
+          "port": 9125,
+          "protocol": "UDP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "istio": "statsd-prom-bridge",
+      "pod-template-hash": "1058243985"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-statsd-prom-bridge.istio-system.svc.cluster.local:statsd-udp", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.79",
+      "Port": 9125,
+      "ServicePort": {
+        "name": "statsd-udp",
+        "port": 9125,
+        "protocol": "UDP"
+      },
+      "UID": "kubernetes://istio-statsd-prom-bridge-549d687fd9-9vrmr.istio-system"
+    },
+    "service": {
+      "hostname": "istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+      "address": "10.125.41.127",
+      "ports": [
+        {
+          "name": "statsd-prom",
+          "port": 9102,
+          "protocol": "TCP"
+        },
+        {
+          "name": "statsd-udp",
+          "port": 9125,
+          "protocol": "UDP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "istio": "statsd-prom-bridge",
+      "pod-template-hash": "1058243985"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:http2", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 80,
+      "ServicePort": {
+        "name": "http2",
+        "port": 80,
+        "protocol": "HTTP2"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:https", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 443,
+      "ServicePort": {
+        "name": "https",
+        "port": 443,
+        "protocol": "HTTPS"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:tcp", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 31400,
+      "ServicePort": {
+        "name": "tcp",
+        "port": 31400,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:tcp-pilot-grpc-tls", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 15011,
+      "ServicePort": {
+        "name": "tcp-pilot-grpc-tls",
+        "port": 15011,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:tcp-citadel-grpc-tls", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 8060,
+      "ServicePort": {
+        "name": "tcp-citadel-grpc-tls",
+        "port": 8060,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:http2-prometheus", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 15030,
+      "ServicePort": {
+        "name": "http2-prometheus",
+        "port": 15030,
+        "protocol": "HTTP2"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "istio-ingressgateway.istio-system.svc.cluster.local:http2-grafana", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.77",
+      "Port": 15031,
+      "ServicePort": {
+        "name": "http2-grafana",
+        "port": 15031,
+        "protocol": "HTTP2"
+      },
+      "UID": "kubernetes://istio-ingressgateway-5475685bbb-7vtpz.istio-system"
+    },
+    "service": {
+      "hostname": "istio-ingressgateway.istio-system.svc.cluster.local",
+      "address": "10.125.41.251",
+      "ports": [
+        {
+          "name": "http2",
+          "port": 80,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "https",
+          "port": 443,
+          "protocol": "HTTPS"
+        },
+        {
+          "name": "tcp",
+          "port": 31400,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-pilot-grpc-tls",
+          "port": 15011,
+          "protocol": "TCP"
+        },
+        {
+          "name": "tcp-citadel-grpc-tls",
+          "port": 8060,
+          "protocol": "TCP"
+        },
+        {
+          "name": "http2-prometheus",
+          "port": 15030,
+          "protocol": "HTTP2"
+        },
+        {
+          "name": "http2-grafana",
+          "port": 15031,
+          "protocol": "HTTP2"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "istio-ingressgateway",
+      "istio": "ingressgateway",
+      "pod-template-hash": "1031241666"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+  },
+
+{}]},
+{"svc": "kubernetes-dashboard.kube-system.svc.cluster.local:", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.58",
+      "Port": 9090,
+      "ServicePort": {
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://kubernetes-dashboard-7979b9b5f4-fwbjj.kube-system"
+    },
+    "service": {
+      "hostname": "kubernetes-dashboard.kube-system.svc.cluster.local",
+      "address": "10.125.41.181",
+      "ports": [
+        {
+          "port": 80,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:53Z"
+    },
+    "labels": {
+      "k8s-app": "kubernetes-dashboard",
+      "kubernetes.io/cluster-service": "true",
+      "pod-template-hash": "3535656190"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/kubernetes-dashboard"
+  },
+
+{}]},
+{"svc": "istio-sidecar-injector.istio-system.svc.cluster.local:", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.28",
+      "Port": 443,
+      "ServicePort": {
+        "port": 443,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://istio-sidecar-injector-d96cd9459-thbtf.istio-system"
+    },
+    "service": {
+      "hostname": "istio-sidecar-injector.istio-system.svc.cluster.local",
+      "address": "10.125.41.227",
+      "ports": [
+        {
+          "port": 443,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "istio": "sidecar-injector",
+      "pod-template-hash": "852785015"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-sidecar-injector-service-account"
+  },
+
+{}]},
+{"svc": "istio-policy.istio-system.svc.cluster.local:grpc-mixer", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.13",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-5vs98.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.24",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-nwdhh.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.48",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-vklbw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.73",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-snj2b.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.78",
+      "Port": 9091,
+      "ServicePort": {
+        "name": "grpc-mixer",
+        "port": 9091,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-2tfgw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-policy.istio-system.svc.cluster.local:grpc-mixer-mtls", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.13",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-5vs98.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.24",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-nwdhh.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.48",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-vklbw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.73",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-snj2b.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.78",
+      "Port": 15004,
+      "ServicePort": {
+        "name": "grpc-mixer-mtls",
+        "port": 15004,
+        "protocol": "GRPC"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-2tfgw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "istio-policy.istio-system.svc.cluster.local:http-monitoring", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.13",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-5vs98.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.24",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-nwdhh.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.48",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-vklbw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.73",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-snj2b.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.78",
+      "Port": 9093,
+      "ServicePort": {
+        "name": "http-monitoring",
+        "port": 9093,
+        "protocol": "HTTP"
+      },
+      "UID": "kubernetes://istio-policy-7f945bf487-2tfgw.istio-system"
+    },
+    "service": {
+      "hostname": "istio-policy.istio-system.svc.cluster.local",
+      "address": "10.125.41.202",
+      "ports": [
+        {
+          "name": "grpc-mixer",
+          "port": 9091,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "grpc-mixer-mtls",
+          "port": 15004,
+          "protocol": "GRPC"
+        },
+        {
+          "name": "http-monitoring",
+          "port": 9093,
+          "protocol": "HTTP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-24T12:18:32Z"
+    },
+    "labels": {
+      "app": "policy",
+      "istio": "mixer",
+      "istio-mixer-type": "policy",
+      "pod-template-hash": "3950169043"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/istio-system/sa/istio-mixer-service-account"
+  },
+
+{}]},
+{"svc": "kube-dns.kube-system.svc.cluster.local:dns", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.62",
+      "Port": 53,
+      "ServicePort": {
+        "name": "dns",
+        "port": 53,
+        "protocol": "UDP"
+      },
+      "UID": "kubernetes://kube-dns-v20-56b5b568d-cxzhv.kube-system"
+    },
+    "service": {
+      "hostname": "kube-dns.kube-system.svc.cluster.local",
+      "address": "10.125.41.10",
+      "ports": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP"
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "pod-template-hash": "126161248",
+      "version": "v20"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/kube-dns"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.72",
+      "Port": 53,
+      "ServicePort": {
+        "name": "dns",
+        "port": 53,
+        "protocol": "UDP"
+      },
+      "UID": "kubernetes://kube-dns-v20-56b5b568d-hhnjs.kube-system"
+    },
+    "service": {
+      "hostname": "kube-dns.kube-system.svc.cluster.local",
+      "address": "10.125.41.10",
+      "ports": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP"
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "pod-template-hash": "126161248",
+      "version": "v20"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/kube-dns"
+  },
+
+{}]},
+{"svc": "kube-dns.kube-system.svc.cluster.local:dns-tcp", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.62",
+      "Port": 53,
+      "ServicePort": {
+        "name": "dns",
+        "port": 53,
+        "protocol": "UDP"
+      },
+      "UID": "kubernetes://kube-dns-v20-56b5b568d-cxzhv.kube-system"
+    },
+    "service": {
+      "hostname": "kube-dns.kube-system.svc.cluster.local",
+      "address": "10.125.41.10",
+      "ports": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP"
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "pod-template-hash": "126161248",
+      "version": "v20"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/kube-dns"
+  },
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.72",
+      "Port": 53,
+      "ServicePort": {
+        "name": "dns",
+        "port": 53,
+        "protocol": "UDP"
+      },
+      "UID": "kubernetes://kube-dns-v20-56b5b568d-hhnjs.kube-system"
+    },
+    "service": {
+      "hostname": "kube-dns.kube-system.svc.cluster.local",
+      "address": "10.125.41.10",
+      "ports": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP"
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "pod-template-hash": "126161248",
+      "version": "v20"
+    },
+    "az": "eastus/1",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/kube-dns"
+  },
+
+{}]},
+{"svc": "istio-galley.istio-system.svc.cluster.local:https-validation", "ep": [
+
+{}]},
+{"svc": "istio-galley.istio-system.svc.cluster.local:http-monitoring", "ep": [
+
+{}]},
+{"svc": "heapster.kube-system.svc.cluster.local:", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.7",
+      "Port": 8082,
+      "ServicePort": {
+        "port": 80,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://heapster-6fdcf4f4f4-spp6q.kube-system"
+    },
+    "service": {
+      "hostname": "heapster.kube-system.svc.cluster.local",
+      "address": "10.125.41.160",
+      "ports": [
+        {
+          "port": 80,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T00:16:52Z"
+    },
+    "labels": {
+      "k8s-app": "heapster",
+      "pod-template-hash": "2987909090"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/heapster"
+  },
+
+{}]},
+{"svc": "tiller-deploy.kube-system.svc.cluster.local:tiller", "ep": [
+{
+    "endpoint": {
+      "Family": 0,
+      "Address": "10.125.40.21",
+      "Port": 44134,
+      "ServicePort": {
+        "name": "tiller",
+        "port": 44134,
+        "protocol": "TCP"
+      },
+      "UID": "kubernetes://tiller-deploy-5694cc47bd-gfj7l.kube-system"
+    },
+    "service": {
+      "hostname": "tiller-deploy.kube-system.svc.cluster.local",
+      "address": "10.125.41.36",
+      "ports": [
+        {
+          "name": "tiller",
+          "port": 44134,
+          "protocol": "TCP"
+        }
+      ],
+      "external": "",
+      "MeshExternal": false,
+      "Resolution": 0,
+      "creationTime": "2018-08-12T17:19:39Z"
+    },
+    "labels": {
+      "app": "helm",
+      "name": "tiller",
+      "pod-template-hash": "1250770368"
+    },
+    "az": "eastus/0",
+    "serviceaccount": "spiffe://cluster.local/ns/kube-system/sa/tiller"
+  },
+
+{}]},
+{}]

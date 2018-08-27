@@ -1,0 +1,1515 @@
+Name:               istio-citadel-7d8f9748c5-55b5h
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             istio=citadel
+                    pod-template-hash=3849530471
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.22
+Controlled By:      ReplicaSet/istio-citadel-7d8f9748c5
+Containers:
+  citadel:
+    Container ID:  docker://ce37e72872759707a8b74bee0f9cbe688bd5bf7febf9d7683999bb18e74c410e
+    Image:         docker.io/istio/citadel:1.0.0
+    Image ID:      docker-pullable://istio/citadel@sha256:01d182138511deba644e039ecccf87b048c3a88f12e8f0085c873ef7d1734dbf
+    Port:          <none>
+    Host Port:     <none>
+    Args:
+      --append-dns-names=true
+      --grpc-port=8060
+      --grpc-hostname=citadel
+      --citadel-storage-namespace=istio-system
+      --self-signed-ca=true
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:18:42 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-citadel-service-account-token-76pzx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-citadel-service-account-token-76pzx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-citadel-service-account-token-76pzx
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-egressgateway-676c8546c5-9pfq2
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=istio-egressgateway
+                    istio=egressgateway
+                    pod-template-hash=2327410271
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.82
+Controlled By:      ReplicaSet/istio-egressgateway-676c8546c5
+Containers:
+  egressgateway:
+    Container ID:  docker://16373f17f92ef80b683d8d5acb60c80b2614e2a4f3690007e87346fe7cad3769
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         80/TCP, 443/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      router
+      -v
+      2
+      --discoveryRefreshDelay
+      1s
+      --drainDuration
+      45s
+      --parentShutdownDuration
+      1m0s
+      --connectTimeout
+      10s
+      --serviceCluster
+      istio-egressgateway
+      --zipkinAddress
+      zipkin:9411
+      --statsdUdpAddress
+      istio-statsd-prom-bridge:9125
+      --proxyAdminPort
+      15000
+      --controlPlaneAuthPolicy
+      NONE
+      --discoveryAddress
+      istio-pilot.istio-system:8080
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:29 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:             istio-egressgateway-676c8546c5-9pfq2 (v1:metadata.name)
+      POD_NAMESPACE:        istio-system (v1:metadata.namespace)
+      INSTANCE_IP:           (v1:status.podIP)
+      ISTIO_META_POD_NAME:  istio-egressgateway-676c8546c5-9pfq2 (v1:metadata.name)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /etc/istio/egressgateway-ca-certs from egressgateway-ca-certs (ro)
+      /etc/istio/egressgateway-certs from egressgateway-certs (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-egressgateway-service-account-token-vw2tw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-egressgateway-service-account
+    Optional:    true
+  egressgateway-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-egressgateway-certs
+    Optional:    true
+  egressgateway-ca-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-egressgateway-ca-certs
+    Optional:    true
+  istio-egressgateway-service-account-token-vw2tw:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-egressgateway-service-account-token-vw2tw
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-galley-5669f7c9b-f5jhk
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 08:18:32 -0400
+Labels:             istio=galley
+                    pod-template-hash=122593756
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.17
+Controlled By:      ReplicaSet/istio-galley-5669f7c9b
+Containers:
+  validator:
+    Container ID:  docker://8e14c34c71b8cc2f089f85c21a3bce35d40117e074dcd82928518b9bce047323
+    Image:         docker.io/istio/galley:1.0.0
+    Image ID:      docker-pullable://istio/galley@sha256:01394fea1e55de6d4c7fbfc28c2dd7462bd26e093008367972b04e29d5b475cf
+    Ports:         443/TCP, 9093/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Command:
+      /usr/local/bin/galley
+      validator
+      --deployment-namespace=istio-system
+      --caCertFile=/etc/istio/certs/root-cert.pem
+      --tlsCertFile=/etc/istio/certs/cert-chain.pem
+      --tlsKeyFile=/etc/istio/certs/key.pem
+      --healthCheckInterval=2s
+      --healthCheckFile=/health
+      --webhook-config-file
+      /etc/istio/config/validatingwebhookconfiguration.yaml
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Sat, 25 Aug 2018 21:15:33 -0400
+      Finished:     Sat, 25 Aug 2018 21:15:48 -0400
+    Ready:          False
+    Restart Count:  752
+    Requests:
+      cpu:        10m
+    Liveness:     exec [/usr/local/bin/galley probe --probe-path=/health --interval=4s] delay=4s timeout=1s period=4s #success=1 #failure=3
+    Readiness:    exec [/usr/local/bin/galley probe --probe-path=/health --interval=4s] delay=4s timeout=1s period=4s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /etc/istio/certs from certs (ro)
+      /etc/istio/config from config (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-galley-service-account-token-mpz6m (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-galley-service-account
+    Optional:    false
+  config:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      istio-galley-configuration
+    Optional:  false
+  istio-galley-service-account-token-mpz6m:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-galley-service-account-token-mpz6m
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason   Age                 From                               Message
+  ----     ------   ----                ----                               -------
+  Normal   Pulled   17m (x745 over 1d)  kubelet, aks-nodepool1-46832895-1  Container image "docker.io/istio/galley:1.0.0" already present on machine
+  Warning  BackOff  2m (x8808 over 1d)  kubelet, aks-nodepool1-46832895-1  Back-off restarting failed container
+
+
+Name:               istio-ingressgateway-5475685bbb-7vtpz
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=istio-ingressgateway
+                    istio=ingressgateway
+                    pod-template-hash=1031241666
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.77
+Controlled By:      ReplicaSet/istio-ingressgateway-5475685bbb
+Containers:
+  ingressgateway:
+    Container ID:  docker://14f28ef282f92f5542d81748ff5fdc4b714500960eac765393e87d97d5389464
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         80/TCP, 443/TCP, 31400/TCP, 15011/TCP, 8060/TCP, 15030/TCP, 15031/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP, 0/TCP, 0/TCP, 0/TCP, 0/TCP
+    Args:
+      proxy
+      router
+      -v
+      2
+      --discoveryRefreshDelay
+      1s
+      --drainDuration
+      45s
+      --parentShutdownDuration
+      1m0s
+      --connectTimeout
+      10s
+      --serviceCluster
+      istio-ingressgateway
+      --zipkinAddress
+      zipkin:9411
+      --statsdUdpAddress
+      istio-statsd-prom-bridge:9125
+      --proxyAdminPort
+      15000
+      --controlPlaneAuthPolicy
+      NONE
+      --discoveryAddress
+      istio-pilot.istio-system:8080
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:46 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:             istio-ingressgateway-5475685bbb-7vtpz (v1:metadata.name)
+      POD_NAMESPACE:        istio-system (v1:metadata.namespace)
+      INSTANCE_IP:           (v1:status.podIP)
+      ISTIO_META_POD_NAME:  istio-ingressgateway-5475685bbb-7vtpz (v1:metadata.name)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /etc/istio/ingressgateway-ca-certs from ingressgateway-ca-certs (ro)
+      /etc/istio/ingressgateway-certs from ingressgateway-certs (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-ingressgateway-service-account-token-cz64s (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-ingressgateway-service-account
+    Optional:    true
+  ingressgateway-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-ingressgateway-certs
+    Optional:    true
+  ingressgateway-ca-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-ingressgateway-ca-certs
+    Optional:    true
+  istio-ingressgateway-service-account-token-cz64s:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-ingressgateway-service-account-token-cz64s
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-pilot-5795d6d695-7tpnv
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-0/10.125.40.35
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=pilot
+                    istio=pilot
+                    pod-template-hash=1351828251
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.64
+Controlled By:      ReplicaSet/istio-pilot-5795d6d695
+Containers:
+  discovery:
+    Container ID:  docker://c77e3be4c21ad244ef135d9c5016d459d5c462067e36422e5590b1f75eef3867
+    Image:         docker.io/istio/pilot:1.0.0
+    Image ID:      docker-pullable://istio/pilot@sha256:db61fb30f321d28c57452bd3fa4ec1592f3c89f5e1d1dc2eb6ef2289c6dd097d
+    Ports:         8080/TCP, 15010/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      discovery
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:43 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:      500m
+      memory:   2Gi
+    Readiness:  http-get http://:8080/debug/endpointz delay=30s timeout=5s period=30s #success=1 #failure=3
+    Environment:
+      POD_NAME:              istio-pilot-5795d6d695-7tpnv (v1:metadata.name)
+      POD_NAMESPACE:         istio-system (v1:metadata.namespace)
+      PILOT_THROTTLE:        500
+      PILOT_CACHE_SQUASH:    5
+      PILOT_TRACE_SAMPLING:  100
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /etc/istio/config from config-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-pilot-service-account-token-whqgj (ro)
+  istio-proxy:
+    Container ID:  docker://24b5cba017176614cebd9cf7f1adb355a77a65c9f41e172f33c767075df5b230
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         15003/TCP, 15005/TCP, 15007/TCP, 15011/TCP
+    Host Ports:    0/TCP, 0/TCP, 0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-pilot
+      --templateFile
+      /etc/istio/proxy/envoy_pilot.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:58 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-pilot-5795d6d695-7tpnv (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-pilot-service-account-token-whqgj (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  config-volume:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      istio
+    Optional:  false
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-pilot-service-account
+    Optional:    false
+  istio-pilot-service-account-token-whqgj:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-pilot-service-account-token-whqgj
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-policy-7f945bf487-2tfgw
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 12:22:12 -0400
+Labels:             app=policy
+                    istio=mixer
+                    istio-mixer-type=policy
+                    pod-template-hash=3950169043
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.78
+Controlled By:      ReplicaSet/istio-policy-7f945bf487
+Containers:
+  mixer:
+    Container ID:  docker://9790516ef225343854cd76a82739c6222ebec0a0c4655d132d4849e47c1b415b
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:22:13 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://abd4d0fbca368d458166ef97460c6c7ab92216553e9fee3b1e6dfe6aaeca791a
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-policy
+      --templateFile
+      /etc/istio/proxy/envoy_policy.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:22:13 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-policy-7f945bf487-2tfgw (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-policy-7f945bf487-5vs98
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 11:57:05 -0400
+Labels:             app=policy
+                    istio=mixer
+                    istio-mixer-type=policy
+                    pod-template-hash=3950169043
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.13
+Controlled By:      ReplicaSet/istio-policy-7f945bf487
+Containers:
+  mixer:
+    Container ID:  docker://f3bac2e4cda0224200333d6378293945b7c86911858f770db2cf50544c6b1e07
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 11:57:07 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://3c7c507195215d450b39e81e9da9ce20812bd8c7bf36f21e81601d6841323212
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-policy
+      --templateFile
+      /etc/istio/proxy/envoy_policy.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 11:57:07 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-policy-7f945bf487-5vs98 (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-policy-7f945bf487-nwdhh
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 12:28:20 -0400
+Labels:             app=policy
+                    istio=mixer
+                    istio-mixer-type=policy
+                    pod-template-hash=3950169043
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.24
+Controlled By:      ReplicaSet/istio-policy-7f945bf487
+Containers:
+  mixer:
+    Container ID:  docker://4fa11a8c3f26c31f5dba1598dd6af44c15ea84a6cbfa884312680e639c0a541a
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:28:22 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://bc1aae0cc5da3e79a28cd1aae92c5068021fcae488f0f55b630b20a98f7ffb7d
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-policy
+      --templateFile
+      /etc/istio/proxy/envoy_policy.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:28:22 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-policy-7f945bf487-nwdhh (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-policy-7f945bf487-snj2b
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=policy
+                    istio=mixer
+                    istio-mixer-type=policy
+                    pod-template-hash=3950169043
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.73
+Controlled By:      ReplicaSet/istio-policy-7f945bf487
+Containers:
+  mixer:
+    Container ID:  docker://2cedf23c739a6764a18e86113e503e7b6b27c18b3881fa15f2597574c823d24a
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:18:43 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://114e7545673176e48cc462aab323498dc2e364c248e4224b6c82bddfab7a6d39
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-policy
+      --templateFile
+      /etc/istio/proxy/envoy_policy.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:32 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-policy-7f945bf487-snj2b (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-policy-7f945bf487-vklbw
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-0/10.125.40.35
+Start Time:         Fri, 24 Aug 2018 12:18:37 -0400
+Labels:             app=policy
+                    istio=mixer
+                    istio-mixer-type=policy
+                    pod-template-hash=3950169043
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.48
+Controlled By:      ReplicaSet/istio-policy-7f945bf487
+Containers:
+  mixer:
+    Container ID:  docker://e853026e2abc43309a0312e9c5b2441aa7bb13d30a55fd6bbf098c42226fea49
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:18:38 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://ae7bdf0ac897c25c1361f34f49f08028c1aa3d19eb51e6313a674f9305a3950a
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-policy
+      --templateFile
+      /etc/istio/proxy/envoy_policy.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:18:39 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-policy-7f945bf487-vklbw (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-sidecar-injector-d96cd9459-thbtf
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             istio=sidecar-injector
+                    pod-template-hash=852785015
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.28
+Controlled By:      ReplicaSet/istio-sidecar-injector-d96cd9459
+Containers:
+  sidecar-injector-webhook:
+    Container ID:  docker://8aca7855c085a5753faaa74d956b797168660305a149d34fcad1fc4384140446
+    Image:         docker.io/istio/sidecar_injector:1.0.0
+    Image ID:      docker-pullable://istio/sidecar_injector@sha256:6c5bf3f4cb14a19d90e39532b0e69b0635c7fc468e70d871652ffe4ff54a29bc
+    Port:          <none>
+    Host Port:     <none>
+    Args:
+      --caCertFile=/etc/istio/certs/root-cert.pem
+      --tlsCertFile=/etc/istio/certs/cert-chain.pem
+      --tlsKeyFile=/etc/istio/certs/key.pem
+      --injectConfig=/etc/istio/inject/config
+      --meshConfig=/etc/istio/config/mesh
+      --healthCheckInterval=2s
+      --healthCheckFile=/health
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:29:04 -0400
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Fri, 24 Aug 2018 08:27:53 -0400
+      Finished:     Fri, 24 Aug 2018 08:28:25 -0400
+    Ready:          True
+    Restart Count:  2
+    Requests:
+      cpu:        10m
+    Liveness:     exec [/usr/local/bin/sidecar-injector probe --probe-path=/health --interval=4s] delay=4s timeout=1s period=4s #success=1 #failure=3
+    Readiness:    exec [/usr/local/bin/sidecar-injector probe --probe-path=/health --interval=4s] delay=4s timeout=1s period=4s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /etc/istio/certs from certs (ro)
+      /etc/istio/config from config-volume (ro)
+      /etc/istio/inject from inject-config (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-sidecar-injector-service-account-token-7m6j5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  config-volume:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      istio
+    Optional:  false
+  certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-sidecar-injector-service-account
+    Optional:    false
+  inject-config:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      istio-sidecar-injector
+    Optional:  false
+  istio-sidecar-injector-service-account-token-7m6j5:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-sidecar-injector-service-account-token-7m6j5
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-statsd-prom-bridge-549d687fd9-9vrmr
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             istio=statsd-prom-bridge
+                    pod-template-hash=1058243985
+Annotations:        sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.79
+Controlled By:      ReplicaSet/istio-statsd-prom-bridge-549d687fd9
+Containers:
+  statsd-prom-bridge:
+    Container ID:  docker://bc56fe95dfcbc865eb27155274c93b111b6fdec3a2088b73ac24b18862322834
+    Image:         docker.io/prom/statsd-exporter:v0.6.0
+    Image ID:      docker-pullable://prom/statsd-exporter@sha256:dc46327ef5577e13955a08ae42a15b83803f0cf50abdbe035edc67842636a997
+    Ports:         9102/TCP, 9125/UDP
+    Host Ports:    0/TCP, 0/UDP
+    Args:
+      -statsd.mapping-config=/etc/statsd/mapping.conf
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:32 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Environment:  <none>
+    Mounts:
+      /etc/statsd from config-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  config-volume:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      istio-statsd-prom-bridge
+    Optional:  false
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-telemetry-6c587bdbc4-6btng
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-0/10.125.40.35
+Start Time:         Fri, 24 Aug 2018 11:57:05 -0400
+Labels:             app=telemetry
+                    istio=mixer
+                    istio-mixer-type=telemetry
+                    pod-template-hash=2714368670
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.43
+Controlled By:      ReplicaSet/istio-telemetry-6c587bdbc4
+Containers:
+  mixer:
+    Container ID:  docker://0388940c92971e65dc9c237934dde45bd058b353de30ac08921d36f82538243d
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 11:57:15 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://daac37d677f20d7f4becb7667fd835334470fb293915355b4f930c8117e4fe61
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-telemetry
+      --templateFile
+      /etc/istio/proxy/envoy_telemetry.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 11:57:15 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-telemetry-6c587bdbc4-6btng (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-telemetry-6c587bdbc4-8bw8l
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 10:29:38 -0400
+Labels:             app=telemetry
+                    istio=mixer
+                    istio-mixer-type=telemetry
+                    pod-template-hash=2714368670
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.29
+Controlled By:      ReplicaSet/istio-telemetry-6c587bdbc4
+Containers:
+  mixer:
+    Container ID:  docker://4addbab3fc2c4503bf0bd67e3fedfd38f0210edc64749f0c86cca5d8d0243a28
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 10:29:48 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://12315e40409a4e447485eac70d4c42385b348abef3c70e77f0e2dba745f26e2c
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-telemetry
+      --templateFile
+      /etc/istio/proxy/envoy_telemetry.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 10:29:48 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-telemetry-6c587bdbc4-8bw8l (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-telemetry-6c587bdbc4-dhbhl
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-1/10.125.40.4
+Start Time:         Fri, 24 Aug 2018 12:18:37 -0400
+Labels:             app=telemetry
+                    istio=mixer
+                    istio-mixer-type=telemetry
+                    pod-template-hash=2714368670
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.30
+Controlled By:      ReplicaSet/istio-telemetry-6c587bdbc4
+Containers:
+  mixer:
+    Container ID:  docker://70ad799fac10b7074404b19a1f0c8f2cf6ec084aa85afc601b654f6026210b6e
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:18:39 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://5a9d4d2d9e466b0cef21a225c2dd05ed4df98057a9a462ee4d19f738a02a1ad7
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-telemetry
+      --templateFile
+      /etc/istio/proxy/envoy_telemetry.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:18:39 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-telemetry-6c587bdbc4-dhbhl (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-telemetry-6c587bdbc4-m58jg
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 12:13:11 -0400
+Labels:             app=telemetry
+                    istio=mixer
+                    istio-mixer-type=telemetry
+                    pod-template-hash=2714368670
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.86
+Controlled By:      ReplicaSet/istio-telemetry-6c587bdbc4
+Containers:
+  mixer:
+    Container ID:  docker://b68444877babd470de625eca7de45aaed5ce60992cab777e7bcd453bd18c42ee
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:13:13 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://2b47eda2325e9442d293c223a623c5739a1a4e736689174475dbb20eea151438
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-telemetry
+      --templateFile
+      /etc/istio/proxy/envoy_telemetry.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 12:13:13 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-telemetry-6c587bdbc4-m58jg (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               istio-telemetry-6c587bdbc4-qntmg
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=telemetry
+                    istio=mixer
+                    istio-mixer-type=telemetry
+                    pod-template-hash=2714368670
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.68
+Controlled By:      ReplicaSet/istio-telemetry-6c587bdbc4
+Containers:
+  mixer:
+    Container ID:  docker://18475abf72b0616f3235280a9fe5ed060b19d4874f537635bd5918135fc2d723
+    Image:         docker.io/istio/mixer:1.0.0
+    Image ID:      docker-pullable://istio/mixer@sha256:e627b16141c7b32a8944b7a2fbe251407425a50d83d0fb401410550502886930
+    Ports:         9093/TCP, 42422/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      --address
+      unix:///sock/mixer.socket
+      --configStoreURL=k8s://
+      --configDefaultNamespace=istio-system
+      --trace_zipkin_url=http://zipkin:9411/api/v1/spans
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:18:44 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9093/version delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+  istio-proxy:
+    Container ID:  docker://68ca8824ac6122793b9fbfc6b3a7dd23b75d8220f996af2f4cd003bc17fa0002
+    Image:         docker.io/istio/proxyv2:1.0.0
+    Image ID:      docker-pullable://istio/proxyv2@sha256:77915a0b8c88cce11f04caf88c9ee30300d5ba1fe13146ad5ece9abf8826204c
+    Ports:         9091/TCP, 15004/TCP
+    Host Ports:    0/TCP, 0/TCP
+    Args:
+      proxy
+      --serviceCluster
+      istio-telemetry
+      --templateFile
+      /etc/istio/proxy/envoy_telemetry.yaml.tmpl
+      --controlPlaneAuthPolicy
+      NONE
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:46 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:  10m
+    Environment:
+      POD_NAME:       istio-telemetry-6c587bdbc4-qntmg (v1:metadata.name)
+      POD_NAMESPACE:  istio-system (v1:metadata.namespace)
+      INSTANCE_IP:     (v1:status.podIP)
+    Mounts:
+      /etc/certs from istio-certs (ro)
+      /sock from uds-socket (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from istio-mixer-service-account-token-t4lgk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  istio-certs:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio.istio-mixer-service-account
+    Optional:    true
+  uds-socket:
+    Type:    EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:  
+  istio-mixer-service-account-token-t4lgk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  istio-mixer-service-account-token-t4lgk
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:               prometheus-6ffc56584f-gqd2l
+Namespace:          istio-system
+Priority:           0
+PriorityClassName:  <none>
+Node:               aks-nodepool1-46832895-2/10.125.40.66
+Start Time:         Fri, 24 Aug 2018 08:18:33 -0400
+Labels:             app=prometheus
+                    pod-template-hash=2997121409
+Annotations:        scheduler.alpha.kubernetes.io/critical-pod=
+                    sidecar.istio.io/inject=false
+Status:             Running
+IP:                 10.125.40.87
+Controlled By:      ReplicaSet/prometheus-6ffc56584f
+Containers:
+  prometheus:
+    Container ID:  docker://49bfb56c9dd82a6765cd8eeafea19147918cc440c075f6108ad6988212b99a09
+    Image:         docker.io/prom/prometheus:v2.3.1
+    Image ID:      docker-pullable://prom/prometheus@sha256:0283ae2509e1ccc71830edf382713cc3906aa55ca9418c50911854223829bf0b
+    Port:          9090/TCP
+    Host Port:     0/TCP
+    Args:
+      --storage.tsdb.retention=6h
+      --config.file=/etc/prometheus/prometheus.yml
+    State:          Running
+      Started:      Fri, 24 Aug 2018 08:19:46 -0400
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        10m
+    Liveness:     http-get http://:9090/-/healthy delay=0s timeout=1s period=10s #success=1 #failure=3
+    Readiness:    http-get http://:9090/-/ready delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /etc/prometheus from config-volume (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from prometheus-token-fblx4 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  config-volume:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      prometheus
+    Optional:  false
+  prometheus-token-fblx4:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  prometheus-token-fblx4
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>

@@ -1,0 +1,1650 @@
+[
+
+
+  {"node": "router~10.125.40.77~istio-ingressgateway-5475685bbb-7vtpz.istio-system~istio-system.svc.cluster.local-2",
+ "addr": "10.125.40.77:50384",
+ "connect": "2018-08-24 12:21:00.312618623 +0000 UTC m=+76.667225092",
+ "listeners":[
+],
+"RDSRoutes":[
+{
+  "name": "http.80",
+  "virtualHosts": [
+    {
+      "name": "blackhole:80",
+      "domains": [
+        "*"
+      ],
+      "routes": [
+        {
+          "match": {
+            "prefix": "/"
+          },
+          "directResponse": {
+            "status": 404
+          },
+          "perFilterConfig": {
+            "mixer": {
+              }
+          }
+        }
+      ]
+    }
+  ],
+  "validateClusters": false
+}],
+"clusters":[
+{
+  "name": "outbound|80||heapster.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||heapster.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|53||kube-dns.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|53||kube-dns.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|53||kube-dns.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|53||kube-dns.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||istio-galley.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-galley.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9093||istio-galley.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-galley.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||istio-egressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||istio-egressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|443||istio-egressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-egressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9090||prometheus.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9090||prometheus.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8060||istio-citadel.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8060||istio-citadel.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-citadel.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-citadel.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9091||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9091||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15004||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15004||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|42422||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|42422||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15010||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15010||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15011||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15011||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8080||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8080||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9093||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||kubernetes.default.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||kubernetes.default.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||metrics-server.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||metrics-server.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||istio-sidecar-injector.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-sidecar-injector.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9091||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9091||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15004||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15004||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9102||istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9102||istio-statsd-prom-bridge.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9125||istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9125||istio-statsd-prom-bridge.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|443||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|31400||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|31400||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15011||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15011||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8060||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8060||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15030||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15030||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15031||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15031||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|80||kubernetes-dashboard.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||kubernetes-dashboard.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "BlackHoleCluster",
+  "connectTimeout": "5.000s"
+}]}
+,
+
+
+  {"node": "router~10.125.40.82~istio-egressgateway-676c8546c5-9pfq2.istio-system~istio-system.svc.cluster.local-1",
+ "addr": "10.125.40.82:59806",
+ "connect": "2018-08-24 12:20:57.775305289 +0000 UTC m=+74.129911958",
+ "listeners":[
+],
+"RDSRoutes":[
+],
+"clusters":[
+{
+  "name": "outbound|9102||istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9102||istio-statsd-prom-bridge.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9125||istio-statsd-prom-bridge.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9125||istio-statsd-prom-bridge.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|443||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|31400||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|31400||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15011||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15011||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8060||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8060||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15030||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15030||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15031||istio-ingressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15031||istio-ingressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|80||kubernetes-dashboard.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||kubernetes-dashboard.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||istio-sidecar-injector.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-sidecar-injector.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9091||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9091||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15004||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15004||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-policy.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-policy.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|53||kube-dns.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|53||kube-dns.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|53||kube-dns.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|53||kube-dns.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||istio-galley.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-galley.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9093||istio-galley.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-galley.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||heapster.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||heapster.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8060||istio-citadel.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8060||istio-citadel.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-citadel.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-citadel.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||addon-http-application-routing-nginx-ingress.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9091||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9091||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15004||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15004||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|9093||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|42422||istio-telemetry.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|42422||istio-telemetry.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "maxRequestsPerConnection": 10000,
+  "circuitBreakers": {
+    "thresholds": [
+      {
+        "maxRequests": 10000
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|15010||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15010||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|15011||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|15011||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|8080||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|8080||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9093||istio-pilot.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9093||istio-pilot.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||istio-egressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||istio-egressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  },
+  "http2ProtocolOptions": {
+    "maxConcurrentStreams": 1073741824
+  }
+},
+{
+  "name": "outbound|443||istio-egressgateway.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||istio-egressgateway.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|9090||prometheus.istio-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|9090||prometheus.istio-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||metrics-server.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||metrics-server.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|443||kubernetes.default.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|443||kubernetes.default.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "outbound|80||addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local",
+  "type": "EDS",
+  "edsClusterConfig": {
+    "edsConfig": {
+      "ads": {
+
+      }
+    },
+    "serviceName": "outbound|80||addon-http-application-routing-default-http-backend.kube-system.svc.cluster.local"
+  },
+  "connectTimeout": "1.000s",
+  "circuitBreakers": {
+    "thresholds": [
+      {
+
+      }
+    ]
+  }
+},
+{
+  "name": "BlackHoleCluster",
+  "connectTimeout": "5.000s"
+}]}
+]
