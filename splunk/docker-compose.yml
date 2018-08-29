@@ -1,0 +1,55 @@
+version: '3'
+
+volumes:
+  opt-splunk-etc:
+  opt-splunk-var:
+
+services:
+  splunkenterprise:
+
+    hostname: splunk
+    image: splunk/splunk:latest
+    environment:
+      SPLUNK_START_ARGS: --accept-license --answer-yes #For upgrade prompt
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+      SPLUNK_USER: 'root'
+      SPLUNK_CMD: 'edit user admin -password letmein22 -role admin -auth admin:letmein22'
+    volumes:
+      - opt-splunk-etc:/opt/splunk/etc
+      - opt-splunk-var:/opt/splunk/var
+    ports:
+      - "8000:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+
+#- `SPLUNK_ENABLE_DEPLOY_SERVER='true'` - Enables deployment server on Indexer.
+#- `SPLUNK_DEPLOYMENT_SERVER='<servername>:<port>` - [configure deployment client](http://docs.splunk.com/Documentation/Splunk/latest/Updating/Configuredeploymentclients).
+#    Set deployment server url.
+#    - Example: `--env SPLUNK_DEPLOYMENT_SERVER='splunkdeploymentserver:8089'`.
+#- `SPLUNK_ENABLE_LISTEN=<port>` - enable [receiving](http://docs.splunk.com/Documentation/Splunk/latest/Forwarding/Enableareceiver).
+#    - Additional configuration is available using `SPLUNK_ENABLE_LISTEN_ARGS`
+#        environment variable.
+#- `SPLUNK_FORWARD_SERVER=<servername>:<port>` - [forward](http://docs.splunk.com/Documentation/Splunk/latest/Forwarding/Deployanixdfmanually)
+#    data to indexer.
+#    - Additional configuration is available using `SPLUNK_FORWARD_SERVER_ARGS`
+#        environment variable.
+#    - Additional forwarders can be set up using `SPLUNK_FORWARD_SERVER_<1..30>`
+#        and `SPLUNK_FORWARD_SERVER_<1..30>_ARGS`.
+#    - Example: `--env SPLUNK_FORWARD_SERVER='splunkindexer:9997' --env
+#        SPLUNK_FORWARD_SERVER_ARGS='method clone' --env
+#        SPLUNK_FORWARD_SERVER_1='splunkindexer2:9997' --env
+#        SPLUNK_FORWARD_SERVER_1_ARGS='-method clone'`.
+#- `SPLUNK_ADD='<monitor|add> <what_to_monitor|what_to_add>'` - execute add command,
+#    for example to [monitor files](http://docs.splunk.com/Documentation/Splunk/latest/Data/MonitorfilesanddirectoriesusingtheCLI)
+#    or [listen](http://docs.splunk.com/Documentation/Splunk/latest/Data/Monitornetworkports) on specific ports.
+#    - Additional add commands can be executed (up to 30) using
+#        `SPLUNK_ADD_<1..30>`.
+#    - Example `--env SPLUNK_ADD='udp 1514' --env SPLUNK_ADD_1='monitor /var/log/*'`.
+#- `SPLUNK_CMD='any splunk command'` - execute any splunk command.
+#    - Additional commands can be executed (up to 30) using
+#        `SPLUNK_CMD_<1..30>`.
+#    - Example `--env SPLUNK_CMD='edit user admin -password random_password -role
+#        admin -auth admin:changeme'`.
+
