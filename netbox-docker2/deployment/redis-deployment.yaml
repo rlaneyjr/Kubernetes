@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.service.type: NodePort
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redis
+  name: redis
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: redis
+    spec:
+      containers:
+      - args:
+        - sh
+        - -c
+        - redis-server --appendonly yes --requirepass $REDIS_PASSWORD
+        env:
+        - name: REDIS_DB
+          value: "0"
+        - name: REDIS_DT
+          value: "300"
+        - name: REDIS_HOST
+          value: redis
+        - name: REDIS_PASSWORD
+          value: AjsIG2fUvR
+        - name: REDIS_PORT
+          value: "6379"
+        - name: WEBHOOKS_ENABLED
+          value: "True"
+        image: redis:4-alpine
+        name: redis
+        ports:
+        - containerPort: 6379
+        resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: netbox-redis-data
+      restartPolicy: Always
+      volumes:
+      - name: netbox-redis-data
+        persistentVolumeClaim:
+          claimName: netbox-redis-data
+status: {}

@@ -1,0 +1,295 @@
+NOTES:
+** Please be patient while the chart is being deployed **
+Redis can be accessed via port 6379 on the following DNS names from within your cluster:
+
+brawny-wolverine-redis-master.default.svc.cluster.local for read/write operations
+brawny-wolverine-redis-slave.default.svc.cluster.local for read-only operations
+
+
+To get your password run:
+
+    export REDIS_PASSWORD=$(kubectl get secret --namespace default brawny-wolverine-redis -o jsonpath="{.data.redis-password}" | base64 --decode)
+
+To connect to your Redis server:
+
+1. Run a Redis pod that you can use as a client:
+
+   kubectl run --namespace default brawny-wolverine-redis-client --rm --tty -i \
+    --env REDIS_PASSWORD=$REDIS_PASSWORD \
+   --image docker.io/bitnami/redis:4.0.10-debian-9 -- bash
+
+2. Connect using the Redis CLI:
+   redis-cli -h brawny-wolverine-redis-master -a $REDIS_PASSWORD
+   redis-cli -h brawny-wolverine-redis-slave -a $REDIS_PASSWORD
+
+To connect to your database from outside the cluster execute the following commands:
+
+    export POD_NAME=$(kubectl get pods --namespace default -l "app=redis" -o jsonpath="{.items[0].metadata.name}")
+    kubectl port-forward --namespace default $POD_NAME 6379:6379
+    redis-cli -h 127.0.0.1 -p 6379 -a $REDIS_PASSWORD
+
+
+NOTES:
+PostgreSQL can be accessed via port 5432 on the following DNS name from within your cluster:
+eponymous-moth-postgresql.default.svc.cluster.local
+To get your user password run:
+
+    PGPASSWORD=$(kubectl get secret --namespace default eponymous-moth-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode; echo)
+
+To connect to your database run the following command (using the env variable from above):
+
+   kubectl run --namespace default eponymous-moth-postgresql-client --restart=Never --rm --tty -i --image postgres \
+   --env "PGPASSWORD=$PGPASSWORD" \
+   --command -- psql -U netbox \
+   -h eponymous-moth-postgresql netbox
+
+
+
+To connect to your database directly from outside the K8s cluster:
+     PGHOST=127.0.0.1
+     PGPORT=5432
+
+     # Execute the following commands to route the connection:
+     export POD_NAME=$(kubectl get pods --namespace default -l "app=postgresql,release=eponymous-moth" -o jsonpath="{.items[0].metadata.name}")
+     kubectl port-forward --namespace default $POD_NAME 5432:5432
+
+====================================================================================================
+~/P/K/n/charts ❯❯❯ helm status gone-panda                                                                                                                                                                     master ✱ ◼ (htskube01)*🐍@3.6.5
+LAST DEPLOYED: Tue Sep  4 16:43:12 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Pod(related)
+NAME                                READY  STATUS            RESTARTS  AGE
+gone-panda-netbox-594cd9cf66-7tfc7  0/1    ErrImagePull      0         4h
+gone-panda-netbox-594cd9cf66-cfzl9  0/1    ImagePullBackOff  0         4h
+gone-panda-netbox-594cd9cf66-qrgqh  0/1    ImagePullBackOff  0         4h
+
+==> v1/Service
+NAME               TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)  AGE
+gone-panda-netbox  ClusterIP  10.125.41.215  <none>       80/TCP   4h
+
+==> v1beta1/Deployment
+NAME               DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+gone-panda-netbox  3        3        3           0          4h
+
+==> v1beta1/Ingress
+NAME               HOSTS              ADDRESS  PORTS  AGE
+gone-panda-netbox  netbox.hearst.com  80       4h
+
+
+NOTES:
+
+  http://gone-panda. to access your application
+
+~/P/K/n/charts ❯❯❯ helm status boisterous-grasshopper                                                                                                                                                          master ✱ ◼ (htskube01)🐍@3.6.5
+LAST DEPLOYED: Tue Sep  4 16:38:24 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1beta1/Role
+NAME                                  AGE
+boisterous-grasshopper-nginx-ingress  4h
+
+==> v1beta1/RoleBinding
+NAME                                  AGE
+boisterous-grasshopper-nginx-ingress  4h
+
+==> v1/ConfigMap
+NAME                                             DATA  AGE
+boisterous-grasshopper-nginx-ingress-controller  1     4h
+boisterous-grasshopper-nginx-ingress-tcp         1     4h
+
+==> v1beta1/ClusterRole
+NAME                                  AGE
+boisterous-grasshopper-nginx-ingress  4h
+
+==> v1beta1/ClusterRoleBinding
+NAME                                  AGE
+boisterous-grasshopper-nginx-ingress  4h
+
+==> v1/Service
+NAME                                                  TYPE          CLUSTER-IP     EXTERNAL-IP     PORT(S)                                    AGE
+boisterous-grasshopper-nginx-ingress-controller       LoadBalancer  10.125.41.135  137.135.71.112  80:31479/TCP,443:32418/TCP,8080:30033/TCP  4h
+boisterous-grasshopper-nginx-ingress-default-backend  ClusterIP     10.125.41.3    <none>          80/TCP                                     4h
+
+==> v1beta1/Deployment
+NAME                                                  DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+boisterous-grasshopper-nginx-ingress-controller       2        0        0           0          4h
+boisterous-grasshopper-nginx-ingress-default-backend  1        1        1           1          4h
+
+==> v1beta1/PodDisruptionBudget
+NAME                                                  MIN AVAILABLE  MAX UNAVAILABLE  ALLOWED DISRUPTIONS  AGE
+boisterous-grasshopper-nginx-ingress-controller       1              N/A              0                    4h
+boisterous-grasshopper-nginx-ingress-default-backend  1              N/A              0                    4h
+
+==> v1/Pod(related)
+NAME                                                             READY  STATUS   RESTARTS  AGE
+boisterous-grasshopper-nginx-ingress-default-backend-95bffc9l8s  1/1    Running  0         4h
+
+
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace default get services -o wide -w boisterous-grasshopper-nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+
+~/P/K/n/charts ❯❯❯ helm list                                                                                                                                                                                  master ✱ ◼ (htskube01)*🐍@3.6.5
+NAME                    REVISION        UPDATED                         STATUS          CHART                   APP VERSION     NAMESPACE
+boisterous-grasshopper  1               Tue Sep  4 16:38:24 2018        DEPLOYED        nginx-ingress-0.24.0    0.17.1          default
+brawny-wolverine        1               Tue Sep  4 16:31:55 2018        DEPLOYED        redis-3.7.3             4.0.10          default
+eponymous-moth          1               Tue Sep  4 16:32:39 2018        DEPLOYED        postgresql-0.15.0       9.6.2           default
+gone-panda              1               Tue Sep  4 16:43:12 2018        DEPLOYED        netbox-v0.1.0                           default
+~/P/K/n/charts ❯❯❯ helm delete gone-panda                                                                                                                                                                     master ✱ ◼ (htskube01)*🐍@3.6.5
+release "gone-panda" deleted
+~/P/K/n/charts ❯❯❯ helm status eponymous-moth                                                                                                                                                                  master ✱ ◼ (htskube01)🐍@3.6.5
+LAST DEPLOYED: Tue Sep  4 16:32:39 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Pod(related)
+NAME                                       READY  STATUS   RESTARTS  AGE
+eponymous-moth-postgresql-5fd9b4994-v6lqc  1/1    Running  0         4h
+
+==> v1/Secret
+NAME                       TYPE    DATA  AGE
+eponymous-moth-postgresql  Opaque  1     4h
+
+==> v1/ConfigMap
+NAME                       DATA  AGE
+eponymous-moth-postgresql  0     4h
+
+==> v1/PersistentVolumeClaim
+NAME                       STATUS  VOLUME                                    CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+eponymous-moth-postgresql  Bound   pvc-aaa81dd8-b081-11e8-a20f-8af4b5d4b968  8Gi       RWO           default       4h
+
+==> v1/Service
+NAME                       TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)   AGE
+eponymous-moth-postgresql  ClusterIP  10.125.41.139  <none>       5432/TCP  4h
+
+==> v1beta1/Deployment
+NAME                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+eponymous-moth-postgresql  1        1        1           1          4h
+
+
+NOTES:
+PostgreSQL can be accessed via port 5432 on the following DNS name from within your cluster:
+eponymous-moth-postgresql.default.svc.cluster.local
+To get your user password run:
+
+    PGPASSWORD=$(kubectl get secret --namespace default eponymous-moth-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode; echo)
+
+To connect to your database run the following command (using the env variable from above):
+
+   kubectl run --namespace default eponymous-moth-postgresql-client --restart=Never --rm --tty -i --image postgres \
+   --env "PGPASSWORD=$PGPASSWORD" \
+   --command -- psql -U netbox \
+   -h eponymous-moth-postgresql netbox
+
+
+
+To connect to your database directly from outside the K8s cluster:
+     PGHOST=127.0.0.1
+     PGPORT=5432
+
+     # Execute the following commands to route the connection:
+     export POD_NAME=$(kubectl get pods --namespace default -l "app=postgresql,release=eponymous-moth" -o jsonpath="{.items[0].metadata.name}")
+     kubectl port-forward --namespace default $POD_NAME 5432:5432
+
+~/P/K/n/charts ❯❯❯ kubectl get secret --namespace default eponymous-moth-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode; echo                                                           master ✱ ◼ (htskube01)*🐍@3.6.5
+kbg secret --namespace default eponymous-moth-postgresql -o jsonpath="{.data.postgres-password}" | base64 --decode; echo
+AjsIG2fUvR
+
+~/P/K/n/charts ❯❯❯ helm status brawny-wolverine                                                                                                                                                                master ✱ ◼ (htskube01)🐍@3.6.5
+LAST DEPLOYED: Tue Sep  4 16:31:55 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1beta1/Deployment
+NAME                          DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+brawny-wolverine-redis-slave  1        0        0           0          4h
+
+==> v1beta2/StatefulSet
+NAME                           DESIRED  CURRENT  AGE
+brawny-wolverine-redis-master  1        0        4h
+
+==> v1/Secret
+NAME                    TYPE    DATA  AGE
+brawny-wolverine-redis  Opaque  1     4h
+
+==> v1/Service
+NAME                           TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)   AGE
+brawny-wolverine-redis-master  ClusterIP  10.125.41.2    <none>       6379/TCP  4h
+brawny-wolverine-redis-slave   ClusterIP  10.125.41.107  <none>       6379/TCP  4h
+
+
+NOTES:
+** Please be patient while the chart is being deployed **
+Redis can be accessed via port 6379 on the following DNS names from within your cluster:
+
+brawny-wolverine-redis-master.default.svc.cluster.local for read/write operations
+brawny-wolverine-redis-slave.default.svc.cluster.local for read-only operations
+
+
+To get your password run:
+
+    export REDIS_PASSWORD=$(kubectl get secret --namespace default brawny-wolverine-redis -o jsonpath="{.data.redis-password}" | base64 --decode)
+
+To connect to your Redis server:
+
+1. Run a Redis pod that you can use as a client:
+
+   kubectl run --namespace default brawny-wolverine-redis-client --rm --tty -i \
+    --env REDIS_PASSWORD=$REDIS_PASSWORD \
+   --image docker.io/bitnami/redis:4.0.10-debian-9 -- bash
+
+2. Connect using the Redis CLI:
+   redis-cli -h brawny-wolverine-redis-master -a $REDIS_PASSWORD
+   redis-cli -h brawny-wolverine-redis-slave -a $REDIS_PASSWORD
+
+To connect to your database from outside the cluster execute the following commands:
+
+    export POD_NAME=$(kubectl get pods --namespace default -l "app=redis" -o jsonpath="{.items[0].metadata.name}")
+    kubectl port-forward --namespace default $POD_NAME 6379:6379
+    redis-cli -h 127.0.0.1 -p 6379 -a $REDIS_PASSWORD
+
+~

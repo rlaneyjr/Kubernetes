@@ -1,0 +1,112 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: netbox
+  name: netbox
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: netbox
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: postgres
+        - name: DB_NAME
+          value: netbox
+        - name: DB_PASSWORD
+          value: AjsIG2fUvR
+        - name: DB_USER
+          value: netbox
+        - name: EMAIL_FROM
+          value: rlaney@hearstsc.com
+        - name: EMAIL_PASSWORD
+          value: FunckyColdMadina22$
+        - name: EMAIL_PORT
+          value: "25"
+        - name: EMAIL_SERVER
+          value: https://outlook.office365.com/owa/?realm=hearst.com
+        - name: EMAIL_TIMEOUT
+          value: "5"
+        - name: EMAIL_USERNAME
+          value: rlaney
+        - name: MAX_PAGE_SIZE
+          value: "0"
+        - name: MEDIA_ROOT
+          value: /opt/netbox/netbox/media
+        - name: NAPALM_PASSWORD
+          value: FunckyColdMadina22$
+        - name: NAPALM_TIMEOUT
+          value: "10"
+        - name: NAPALM_USERNAME
+          value: rlaney
+        - name: SECRET_KEY
+          value: JVBMvt0VFvFArYciKZdN6x0A42cljCeG
+        - name: SUPERUSER_API_TOKEN
+          value: 66b1b301d87e22ea3175b38d5d01d8757
+        - name: SUPERUSER_EMAIL
+          value: rlaney@hearstsc.com
+        - name: SUPERUSER_NAME
+          value: rlaney
+        - name: SUPERUSER_PASSWORD
+          value: ralrox22
+        image: rleastusacr.azurecr.io/netbox:v3
+        name: netbox
+        resources: {}
+        volumeMounts:
+        - mountPath: /opt/netbox/startup_scripts
+          name: netbox-claim0
+          readOnly: true
+        - mountPath: /opt/netbox/initializers
+          name: netbox-claim1
+          readOnly: true
+        - mountPath: /etc/netbox/config
+          name: netbox-claim2
+          readOnly: true
+        - mountPath: /etc/netbox-nginx/
+          name: netbox-nginx-config
+        - mountPath: /opt/netbox/netbox/static
+          name: netbox-static-files
+        - mountPath: /opt/netbox/netbox/media
+          name: netbox-media-files
+        - mountPath: /etc/netbox/reports
+          name: netbox-report-files
+          readOnly: true
+      restartPolicy: Always
+      volumes:
+      - name: netbox-claim0
+        persistentVolumeClaim:
+          claimName: netbox-claim0
+          readOnly: true
+      - name: netbox-claim1
+        persistentVolumeClaim:
+          claimName: netbox-claim1
+          readOnly: true
+      - name: netbox-claim2
+        persistentVolumeClaim:
+          claimName: netbox-claim2
+          readOnly: true
+      - name: netbox-nginx-config
+        persistentVolumeClaim:
+          claimName: netbox-nginx-config
+      - name: netbox-static-files
+        persistentVolumeClaim:
+          claimName: netbox-static-files
+      - name: netbox-media-files
+        persistentVolumeClaim:
+          claimName: netbox-media-files
+      - name: netbox-report-files
+        persistentVolumeClaim:
+          claimName: netbox-report-files
+          readOnly: true
+status: {}

@@ -84,7 +84,7 @@ controller:
 
   # The update strategy to apply to the Deployment or DaemonSet
   ##
-  updateStrategy: {}
+  updateStrategy: 
     rollingUpdate:
       maxUnavailable: 1
     type: RollingUpdate
