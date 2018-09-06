@@ -4,8 +4,8 @@ services:
     build:
       context: .
       args:
-        - BRANCH=${VERSION-master}
-    image: rleastusacr.azurecr.io/netbox:${VERSION-latest}
+        - BRANCH=develop
+    image: rleastusacr.azurecr.io/netbox:v3
     depends_on:
     - postgres
     - redis
