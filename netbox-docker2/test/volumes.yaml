@@ -1,0 +1,86 @@
+# Example using specified account class
+# kind: PersistentVolumeClaim
+# apiVersion: v1
+# metadata:
+#   name: pv-dd-account-hdd-5g
+#   annotations:
+#     volume.beta.kubernetes.io/storage-class: accounthdd
+# spec:
+#   accessModes:
+#   - ReadWriteOnce
+#   resources:
+#     requests:
+# storage: 5Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: redisdb
+  namespace: netbox
+  labels:
+    app: redis
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 8Gi
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: netboxdb
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: netbox-static-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: netbox-media-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: netbox-report-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 2Gi
+
+---

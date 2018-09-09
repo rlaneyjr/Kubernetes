@@ -1,0 +1,399 @@
+---
+# Redis Deployment with AzureDisk
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redisdb
+  namespace: netbox
+  labels:
+    app: redis
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 8Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redisdb
+  namespace: netbox
+  labels:
+    app: redis
+spec:
+  type: NodePort
+  selector:
+    app: redis
+  ports:
+  - name: redis
+    port: 6379
+    targetPort: 6379
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: netbox
+  labels:
+    app: redis
+spec:
+  selector:
+    matchLabels:
+      app: redis
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: redis
+      labels:
+        app: redis
+    spec:
+      containers:
+      - name: redis
+        image: rleastusacr.azurecr.io/redis:4-alpine
+        command: [ "/bin/sh", "-c", "redis-server --appendonly yes --requirepass $(REDIS_PASSWORD)" ]
+        env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis-env
+              key: REDIS_PASSWORD
+        volumeMounts:
+        - name: redisdb
+          mountPath: /
+          subPath: data
+        ports:
+        - containerPort: 6379
+      restartPolicy: Always
+      volumes:
+      - name: redisdb
+        persistentVolumeClaim:
+          claimName: redisdb
+---
+# Postgres Deployment with AzureDisk
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netboxdb
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres
+  namespace: netbox
+  labels:
+    app: postgres
+spec:
+  type: NodePort
+  selector:
+    app: postgres
+  ports:
+  - name: postgresql
+    port: 5432
+    targetPort: 5432
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: netbox
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: postgres
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: rleastusacr.azurecr.io/postgres:10.4-alpine
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/
+          subPath: data
+          name: netboxdb
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_PASSWORD
+      restartPolicy: Always
+      volumes:
+      - name: netboxdb
+        persistentVolumeClaim:
+          claimName: netboxdb
+---
+# Nginx Deployment
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netbox-static-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx
+  namespace: netbox
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+  - name: nginx
+    port: 8080
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: netbox
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: rleastusacr.azurecr.io/nginx:1.15-alpine
+        command: [ "nginx", "-c", "/etc/netbox-nginx/nginx.conf" ]
+        volumeMounts:
+        - name: netbox-static-files
+          mountPath: /opt/netbox/netbox/static
+          readOnly: true
+        - name: nginx-config
+          mountPath: /etc/netbox-nginx/
+          readOnly: true
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      - name: netbox-static-files
+        persistentVolumeClaim:
+          claimName: netbox-static-files
+          readOnly: true
+---
+# Netbox Deployment with AzureDisk
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netbox-media-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netbox-report-files
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netbox
+  namespace: netbox
+spec:
+  selector:
+    matchLabels:
+      app: netbox
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: netbox
+      labels:
+        app: netbox
+    spec:
+      containers:
+      - name: netbox
+        image: rleastusacr.azurecr.io/netbox:v3
+        volumeMounts:
+        - mountPath: /etc/netbox/config
+          name: netbox-config
+          readOnly: true
+        - mountPath: /opt/netbox/netbox/media
+          name: netbox-media-files
+        - mountPath: /etc/netbox/reports
+          name: netbox-report-files
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: DB_HOST
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: DB_NAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: DB_PASSWORD
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: DB_USER
+        - name: EMAIL_FROM
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_FROM
+        - name: EMAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_PASSWORD
+        - name: EMAIL_PORT
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_PORT
+        - name: EMAIL_SERVER
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_SERVER
+        - name: EMAIL_TIMEOUT
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_TIMEOUT
+        - name: EMAIL_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: EMAIL_USERNAME
+        - name: MAX_PAGE_SIZE
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: MAX_PAGE_SIZE
+        - name: MEDIA_ROOT
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: MEDIA_ROOT
+        - name: NAPALM_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: NAPALM_PASSWORD
+        - name: NAPALM_TIMEOUT
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: NAPALM_TIMEOUT
+        - name: NAPALM_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: NAPALM_USERNAME
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: SECRET_KEY
+        - name: SUPERUSER_API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: SUPERUSER_API_TOKEN
+        - name: SUPERUSER_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: SUPERUSER_EMAIL
+        - name: SUPERUSER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: SUPERUSER_NAME
+        - name: SUPERUSER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: netbox-env
+              key: SUPERUSER_PASSWORD
+      restartPolicy: Always
+      volumes:
+      - name: netbox-config
+        configMap:
+          name: netbox-config
+      - name: netbox-media-files
+        persistentVolumeClaim:
+          claimName: netbox-media-files
+      - name: netbox-report-files
+        persistentVolumeClaim:
+          claimName: netbox-report-files
+---
+

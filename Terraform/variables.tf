@@ -18,19 +18,19 @@ variable "vm_username" {
 }
 
 variable "ssh_public_key" {
-    default = "../private/cloud_id.pub"
+    default = "../private/certs/cloud_id.pub"
 }
 
 variable "dns_prefix" {
-    default = "htskube01"
+    default = "htskube02"
 }
 
 variable cluster_name {
-    default = "htskube01"
+    default = "htskube02"
 }
 
 variable resource_group_name {
-    default = "hts-eastus-monitor-rg1"
+    default = "hts-eastus-monitor-rg2"
 }
 
 variable location {

@@ -1,0 +1,12 @@
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1beta1
+metadata:
+  name: rlstore01
+provisioner: kubernetes.io/azure-disk
+parameters:
+  skuname: Standard_LRS
+  location: eastus
+storageAccount: rlstore01
+
+---

@@ -1,0 +1,150 @@
+---
+# Redis Deployment with AzureDisk
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redisdb
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 8Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: redisdb
+  namespace: netbox
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  labels:
+    app: redis
+spec:
+  type: LoadBalancer
+  selector:
+    app: redis
+  ports:
+    - port: 6379
+      name: redis
+---
+kind: Deployment
+apiVersion: apps/v1beta1
+metadata:
+  name: redis
+  namespace: netbox
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: redis
+      labels:
+        app: redis
+    spec:
+      containers:
+      - args:
+        - sh
+        - -c
+        - redis-server --appendonly yes --requirepass $REDIS_PASSWORD
+        env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis-env
+              key: REDIS_PASSWORD
+      - name: redis
+        image: rleastusacr.azurecr.io/redis:4-alpine
+        volumeMounts:
+        - mountPath: /
+          subPath: data
+          name: redisdb
+        ports:
+        - containerPort: 6379
+      volumes:
+      - name: redisdb
+        persistentVolumeClaim:
+          claimName: redisdb
+---
+# Postgres Deployment with AzureDisk
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netboxdb
+  namespace: netbox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 10Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres
+  namespace: netbox
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  labels:
+    app: postgres
+spec:
+  type: LoadBalancer
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      name: postgresql
+---
+kind: Deployment
+apiVersion: apps/v1beta1
+metadata:
+  name: postgres
+  namespace: netbox
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: postgres
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: rleastusacr.azurecr.io/postgres:10.4-alpine
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/
+          subPath: data
+          name: netboxdb
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_DB
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-env
+              key: POSTGRES_PASSWORD
+      restartPolicy: Always
+      volumes:
+      - name: netboxdb
+        persistentVolumeClaim:
+          claimName: netboxdb
+---
+---
+

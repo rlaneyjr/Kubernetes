@@ -1,0 +1,11 @@
+az extension add --name alias
+az extension add --name azure-batch-cli-extensions
+az extension add --name dev-spaces-preview
+az extension add --name eventgrid
+az extension add --name express-route-cross-connection
+az extension add --name image-copy-extension
+az extension add --name keyvault-preview
+az extension add --name log-analytics
+az extension add --name mesh
+az extension add --name storage-preview
+az extension add --name webapp
