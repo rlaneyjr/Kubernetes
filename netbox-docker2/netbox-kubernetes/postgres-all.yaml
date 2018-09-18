@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: postgres
+  namespace: netbox
   labels:
     backend: postgres
 spec:
@@ -19,17 +20,17 @@ spec:
         env:
         - name: POSTGRES_DB
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               key: POSTGRES_DB
               name: postgres-env
         - name: POSTGRES_USER
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               key: POSTGRES_USER
               name: postgres-env      
         - name: POSTGRES_PASSWORD
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               key: POSTGRES_PASSWORD
               name: postgres-env
           
@@ -40,6 +41,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres
+  namespace: netbox
   labels:
     backend: postgres
 spec:
@@ -51,13 +53,3 @@ spec:
   selector:
     backend: postgres
 
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: postgres-env
-data:
-  POSTGRES_DB: netbox
-  POSTGRES_USER: netbox
-  POSTGRES_PASSWORD: J5brHrAXFLQSif0K
-  

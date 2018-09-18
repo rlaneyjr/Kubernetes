@@ -1,0 +1,39 @@
+NAME:   unhinged-mole
+LAST DEPLOYED: Mon Sep 17 17:11:58 2018
+NAMESPACE: netbox
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/ConfigMap
+NAME                   DATA  AGE
+unhinged-mole-traefik  1     0s
+
+==> v1/Service
+NAME                   TYPE          CLUSTER-IP    EXTERNAL-IP  PORT(S)                     AGE
+unhinged-mole-traefik  LoadBalancer  10.125.41.45  <pending>    80:30825/TCP,443:30162/TCP  0s
+
+==> v1/Deployment
+NAME                   DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+unhinged-mole-traefik  1        1        1           0          0s
+
+==> v1/Pod(related)
+NAME                                  READY  STATUS             RESTARTS  AGE
+unhinged-mole-traefik-86b9f49b-z72ck  0/1    ContainerCreating  0         0s
+
+
+NOTES:
+
+1. Get Traefik's load balancer IP/hostname:
+
+     NOTE: It may take a few minutes for this to become available.
+
+     You can watch the status by running:
+
+         $ kubectl get svc unhinged-mole-traefik --namespace netbox -w
+
+     Once 'EXTERNAL-IP' is no longer '<pending>':
+
+         $ kubectl describe svc unhinged-mole-traefik --namespace netbox | grep Ingress | awk '{print $3}'
+
+2. Configure DNS records corresponding to Kubernetes ingress resources to point to the load balancer IP/hostname found in step 1
+
